@@ -4,7 +4,7 @@ type Props = {};
 
 export default function HomePage({}: Props) {
   return(
-    <div>
+    <div className="col-start-2">
       HomePage
     </div>
     
