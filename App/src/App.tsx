@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="grid grid-cols-12 gap-4 w-full min-h-screen grid-rows-6">
+    <div className="grid grid-cols-12 gap-4 w-full grid-rows-6 h-screen">
     <Navbar/>
     <BrowserRouter>
       <Routes>

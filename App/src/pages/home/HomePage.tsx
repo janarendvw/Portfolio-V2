@@ -3,10 +3,24 @@ import React from "react";
 type Props = {};
 
 export default function HomePage({}: Props) {
-  return(
-    <div className="flex flex-col col-start-2 col-span-10 row-start-2 mt-0">
-      HomePage
+  return (
+    <div className="flex justify-between col-start-2 col-span-10 row-start-3 row-span-1">
+      <div id="home-hero-left" className="w-96">
+        <div className="text-6xl">YOU MADE IT!</div>
+        <div className="text-xl opacity-80 mt-4">
+          Great. Welcome to my portfolio. Feel free to roam around and relax for
+          a while.
+        </div>
+      </div>
+      <div id="home-hero-right" className="w-96">
+        <div className="text-2xl font-bold">Hi! My name is Jan.</div>
+        <div className="text-xl opacity-80 mt-4">
+          I am a 22 year old full stack developer from the Netherlands with a
+          key interest in visual design and data science.
+        </div>
+        <button className="btn btn-primary btn-lg mt-8">About me</button>
+      </div>
+     
     </div>
-    
-  )
+  );
 }
