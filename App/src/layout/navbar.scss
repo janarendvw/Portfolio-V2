@@ -1,0 +1,15 @@
+nav > *{
+    position: relative;
+}
+.active{
+    &::before{
+        content: "";
+        position: absolute;
+        height: 4px;
+        background-color: #fff;
+        width: 100%;
+        top:-50%;
+        left:0;
+        transition: 1s;
+    }
+}
