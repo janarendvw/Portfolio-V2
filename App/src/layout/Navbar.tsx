@@ -19,7 +19,7 @@ export default function Navbar({}: Props) {
       <div className="font-bold text-3xl">STCKD</div>
       <span className="flex flex-col">
         <nav id="nav-links" className="flex gap-10 items-center">
-          <span className={currentPath === "/home" ? "active" : ""}>
+          <span className={currentPath === "/" || currentPath === "/home" ? "active" : ""}>
             <Link to={"/home"}>Home</Link>
           </span>
           <span className={currentPath === "/about-me" ? "active" : ""}>
