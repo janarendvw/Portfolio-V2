@@ -15,7 +15,7 @@ export default function HomePage({}: Props) {
       </div>
       <div id="home-hero-right" className="w-96">
         <div className="text-2xl font-bold">Hi! My name is Jan.</div>
-        <div className="text-xl opacity-80 mt-4">
+        <div className="text-xl opacity-80">
           I am a 22 year old full stack developer from the Netherlands with a
           key interest in visual design and data science.
         </div>
