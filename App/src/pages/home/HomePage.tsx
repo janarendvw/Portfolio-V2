@@ -4,7 +4,7 @@ type Props = {};
 
 export default function HomePage({}: Props) {
   return (
-    <div className="flex justify-between col-start-2 col-span-10 row-start-3 row-span-1">
+    <div className="flex justify-between col-start-2 col-span-10 row-start-2 row-span-1">
       <div id="home-hero-left" className="w-96">
         <div className="text-6xl">YOU MADE IT!</div>
         <div className="text-xl opacity-80 mt-4">
