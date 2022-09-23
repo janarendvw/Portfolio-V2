@@ -9,7 +9,7 @@ import ProjectsPage from "./pages/projects/ProjectsPage";
 
 function App() {
   return (
-    <div className="grid grid-cols-12 gap-4 w-full h-screen grid-rows-4">
+    <div className="grid grid-cols-12 gap-4 w-full h-screen px-8 auto-rows-auto">
     <BrowserRouter>
     <Navbar/>
       <Routes>

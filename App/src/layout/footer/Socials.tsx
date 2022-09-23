@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { GitHub, Linkedin, Twitter } from "react-feather";
+import { Link } from "react-router-dom";
 
-type Props = {}
+type Props = {};
 
 export default function Socials({}: Props) {
   return (
-    <div>Socials</div>
-  )
+    <div className="flex gap-4">
+      <a className="opacity-70 hover:opacity-100 hover:-translate-y-1 duration-500" href={"https://github.com"} target={'_blank'}>
+        <GitHub size={16} />
+      </a>
+      <a className="opacity-70 hover:opacity-100 hover:-translate-y-1 duration-500" href={"https://linkedin.com"} target={'_blank'}>
+        <Linkedin size={16} />
+      </a>
+    </div>
+  );
 }
