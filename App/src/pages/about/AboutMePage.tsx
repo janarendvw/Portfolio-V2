@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ export default function AboutMePage({}: Props) {
         accusamus sequi omnis aperiam inventore vitae ab corrupti voluptatem
         illum modi!
         </div>
+        <Link to={'/projects'} className="btn btn-primary btn-lg mt-8">Projects</Link>
       </div>
       <div id="about-me-image" className="w-1/3" style={{ background: 'gray' }}>
         </div>
