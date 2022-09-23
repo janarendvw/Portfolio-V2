@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -18,7 +19,7 @@ export default function HomePage({}: Props) {
           I am a 22 year old full stack developer from the Netherlands with a
           key interest in visual design and data science.
         </div>
-        <button className="btn btn-primary btn-lg mt-8">About me</button>
+        <Link to={"/about-me"} className="btn btn-primary btn-lg mt-8">About me</Link>
       </div>
      
     </div>
