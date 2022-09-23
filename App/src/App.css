@@ -1,45 +1,47 @@
 body{
     overflow: hidden;
 }
-#home-hero-left{
-    animation: slideInFromLeft 1s cubic-bezier(0,.95,.11,1);
+#home-hero-left {
+  animation: slideInFromLeft 1s cubic-bezier(0, 0.95, 0.11, 1);
+}
+
+#home-hero-right {
+  animation: slideInFromBottom 1s cubic-bezier(0, 0.95, 0.11, 1);
+}
+
+#about-me-text {
+  animation: slideInFromBottom 1s cubic-bezier(0, 0.95, 0.11, 1);
+}
+#about-me-image {
+  animation: slideInFromRight 1s cubic-bezier(0, 0.95, 0.11, 1);
+}
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  
-  #home-hero-right{
-    animation: slideInFromBottom 1s cubic-bezier(0,.95,.11,1);
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  @keyframes slideInFromLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+}
 @keyframes slideInFromRight {
-      0% {
-        opacity: 0;
-        transform: translateX(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes slideInFromBottom {
-      0% {
-        opacity: 0;
-        transform: translateY(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-  
-
-    
-
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
