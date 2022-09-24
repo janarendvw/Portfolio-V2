@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { XCircle } from "react-feather";
 import './projectPage.scss'
 type Props = {};
@@ -35,39 +35,47 @@ const projects = [
   },
 ];
 export default function ProjectsPage({}: Props) {
+
+useEffect(() => {
+  const slider:any = document.querySelector("#projects-scroller");
+  let isDown = false;
+  let startX: any;
+  let scrollLeft: any;
+  
+  slider?.addEventListener("mousedown", (e: { pageX: number; }) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider?.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider?.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider?.addEventListener("mousemove", (e: { preventDefault: () => void; pageX: number; }) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = x - startX;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+}, [])
+
+
   return (
     <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-2/3">
+        <div className="flex flex-col lg:flex-row md:justify-between items-start">
         <div className="text-4xl font-bold">My projects</div>
-        <div id="projects-container">
-        <div
-          id="projects-scroller"
-          className="overflow-y-scroll max-h-[50vh] gap-8 mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 pr-4"
-        >
-          {projects.map((project, index) => {
-            return (
-                <div
-                  style={{ background: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", "--animation-order": index } as React.CSSProperties }
-                  id="project" className="h-96 rounded-lg shadow-lg flex flex-col justify-between overflow-hidden"
-                >
-                  <div className="bg-black/70 hover:bg-black/20 cursor-pointer duration-200 h-full flex flex-col justify-between p-4">
-                  <div className="flex flex-col n">
-                    <div className="text-2xl font-bold">{project.title}</div>
-                    <div className="text-xl opacity-80">
-                      {project.description}
-                    </div>
-                  </div>
-                  </div>
-                </div>
-            );
-          })}
-        </div>
-        </div>
         <div
           id="projects-skill-filter"
-          className="items-center py-4 gap-4 flex hover:opacity-100 cursor-pointer"
+          className="items-center gap-4 flex hover:opacity-100 cursor-pointer"
         >
-          Filter projects based on skills:
+          <span className="opacity-60 font-bold">Filter by skill:</span>
           <span className="gap-4 flex p-4 rounded-md">
             <span className="badge badge-outline badge-warning opacity-50 hover:opacity-100 cursor-pointer">
               html
@@ -80,6 +88,31 @@ export default function ProjectsPage({}: Props) {
               Vue js
             </span>
           </span>
+        </div>
+        </div>
+        <div id="projects-container">
+        <div
+          id="projects-scroller"
+          className="grid overflow-auto grid-flow-row md:grid-flow-col gap-4 p-4 cursor-grab"
+        >
+          {projects.map((project, index) => {
+            return (
+                <div
+                  style={{ background: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", "--animation-order": index } as React.CSSProperties }
+                  id="project" className="snap-center h-96 w-96 rounded-lg shadow-lg flex flex-col justify-between overflow-hidden hover:scale-[1.03] duration-100"
+                >
+                  <div className="bg-black/70 hover:bg-black/20 duration-200 h-full flex flex-col justify-between p-4">
+                  <div className="flex flex-col n">
+                    <div className="text-2xl font-bold">{project.title}</div>
+                    <div className="text-xl opacity-80">
+                      {project.description}
+                    </div>
+                  </div>
+                  </div>
+                </div>
+            );
+          })}
+        </div>
         </div>
       </div>
       <div id="projects-contact" className="w-1/4">
