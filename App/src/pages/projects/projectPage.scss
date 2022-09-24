@@ -4,6 +4,9 @@
         animation-delay: calc(var(--animation-order) * 200ms);
         opacity: 0;
     }
+#project:hover #project-description {
+        opacity: 1;
+    }
     #projects-scroller{
         transition-duration: 500ms;
     }

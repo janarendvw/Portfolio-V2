@@ -119,16 +119,16 @@ export default function ProjectsPage({}: Props) {
                   id="project"
                   className="snap-center h-96 w-96 rounded-lg shadow-lg flex flex-col justify-between overflow-hidden duration-100"
                 >
-                  <div className="bg-black/70 hover:bg-black/80 duration-200 h-full flex flex-col justify-between">
+                  <div className="bg-black/20 hover:bg-black/90 duration-200 h-full flex flex-col justify-between">
                     <div id="project-text" className="p-4">
                     <div className="text-xl font-bold pb-2">{project.title}</div>
-                      <div className="text-md opacity-80 mt-4">
+                      <div id="project-description" className="text-md opacity-0 mt-4">
                         {project.description}
                       </div>
                       </div>
                       <span className="flex justify-between p-4 items-center">
                       <a className="btn btn-sm btn-primary mt-4 w-max flex gap-2" href="#"><ExternalLink size={16}/> visit</a>
-                      <a className="btn btn-sm btn-outline btn-secondary mt-4 w-max flex gap-2" href="#"><GitPullRequest size={16}/> Source Code</a>
+                      <a className="btn btn-sm btn-outline btn-secondary bg-black/50 0 mt-4 w-max flex gap-2" href="#"><GitPullRequest size={16}/> Source Code</a>
                       </span>
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export default function ProjectsPage({}: Props) {
         </div>
       </div>
       <div id="projects-contact" className="w-1/4">
-        <div className="text-2xl font-bold">Let's get in touch!</div>
+        <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any
           questions or want to work together, feel free to contact me!
