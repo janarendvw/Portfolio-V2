@@ -36,13 +36,13 @@ const projects = [
 ];
 export default function ProjectsPage({}: Props) {
   return (
-    <div className="flex col-start-2 row-start-2 row-end-2 col-end-12 justify-between">
+    <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-2/3">
         <div className="text-4xl font-bold">My projects</div>
         <div id="projects-container">
         <div
           id="projects-scroller"
-          className="overflow-y-scroll max-h-[50vh] gap-8 mt-8 grid grid-cols-3 pr-4"
+          className="overflow-y-scroll max-h-[50vh] gap-8 mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 pr-4"
         >
           {projects.map((project, index) => {
             return (
