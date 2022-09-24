@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { XCircle } from "react-feather";
+import ContactForm from "../contact/ContactForm";
 import './projectPage.scss'
 type Props = {};
 const projects = [
@@ -117,10 +118,11 @@ useEffect(() => {
       </div>
       <div id="projects-contact" className="w-1/4">
         <div className="text-2xl font-bold">Let's get in touch!</div>
-        <div className="text-xl opacity-80 mt-4">
+        <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any
           questions or want to work together, feel free to contact me!
         </div>
+        <ContactForm/>
       </div>
     </div>
   );
