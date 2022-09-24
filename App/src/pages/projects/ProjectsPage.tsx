@@ -102,7 +102,7 @@ export default function ProjectsPage({}: Props) {
         <div id="projects-container">
           <div
             id="projects-scroller"
-            className="grid overflow-auto grid-flow-row md:grid-flow-col gap-4 p-4 cursor-grab"
+            className="grid overflow-auto grid-flow-row md:grid-flow-col gap-8 py-4 cursor-grab"
           >
             {projects.map((project, index) => {
               return (
@@ -118,14 +118,14 @@ export default function ProjectsPage({}: Props) {
                   id="project"
                   className="snap-center h-96 w-96 rounded-lg shadow-lg flex flex-col justify-between overflow-hidden duration-100"
                 >
-                  <div className="bg-black/70 hover:bg-black/20 duration-200 h-full flex flex-col justify-between">
+                  <div className="bg-black/70 hover:bg-black/80 duration-200 h-full flex flex-col justify-between">
                     <div id="project-text" className="p-4">
-                      <div className="text-2xl font-bold">{project.title}</div>
-                      <div className="text-xl opacity-80">
+                    <div className="text-xl font-bold pb-2">{project.title}</div>
+                      <div className="text-md opacity-80 mt-4">
                         {project.description}
                       </div>
                       </div>
-                      <span className="flex justify-between bg-black/60 px-2 items-center pb-2">
+                      <span className="flex justify-between p-4 items-center">
                       <a className="btn btn-sm btn-primary mt-4 w-max flex gap-2" href="#"><ExternalLink size={16}/> visit</a>
                       <a className="btn btn-sm btn-outline btn-secondary mt-4 w-max flex gap-2" href="#"><GitPullRequest size={16}/> Source Code</a>
                       </span>
