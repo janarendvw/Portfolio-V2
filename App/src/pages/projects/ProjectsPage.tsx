@@ -1,6 +1,6 @@
 import React from "react";
 import { XCircle } from "react-feather";
-
+import './projectPage.scss'
 type Props = {};
 const projects = [
   {
@@ -36,21 +36,21 @@ const projects = [
 ];
 export default function ProjectsPage({}: Props) {
   return (
-    <div className="flex col-start-2 row-start-2 col-end-12 justify-between">
+    <div className="flex col-start-2 row-start-2 row-end-2 col-end-12 justify-between">
       <div id="projects-section" className="w-2/3">
         <div className="text-4xl font-bold">My projects</div>
         <div id="projects-container">
         <div
           id="projects-scroller"
-          className="overflow-y-scroll max-h-[50vh] flex flex-col gap-8 mt-8 grid grid-cols-3 pr-4"
+          className="overflow-y-scroll max-h-[50vh] gap-8 mt-8 grid grid-cols-3 pr-4"
         >
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             return (
                 <div
-                  style={{ background: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center" }}
-                  id="project" className="h-96 rounded-lg shadow-lg flex flex-col justify-between"
+                  style={{ background: `url(${project.image})`, backgroundSize: "cover", backgroundPosition: "center", "--animation-order": index } as React.CSSProperties }
+                  id="project" className="h-96 rounded-lg shadow-lg flex flex-col justify-between overflow-hidden"
                 >
-                  <div className="bg-black/70 h-full flex flex-col justify-between p-4">
+                  <div className="bg-black/70 hover:bg-black/20 cursor-pointer duration-200 h-full flex flex-col justify-between p-4">
                   <div className="flex flex-col n">
                     <div className="text-2xl font-bold">{project.title}</div>
                     <div className="text-xl opacity-80">
