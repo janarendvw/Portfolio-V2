@@ -22,8 +22,7 @@ export default function AboutMePage({}: Props) {
       </div>
       <div
         id="about-me-image"
-        className="w-1/3"
-        style={{ background: "gray" }}
+        className="w-1/3 bg-white/10"
       ></div>
     </div>
   );

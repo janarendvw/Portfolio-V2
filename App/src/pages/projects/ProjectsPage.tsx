@@ -37,14 +37,14 @@ const projects = [
 export default function ProjectsPage({}: Props) {
   return (
     <>
-      <div id="projects" className="row-start-2 col-start-2 col-end-9 ">
+      <div id="projects" className="row-start-2 col-start-2 col-end-8 ">
         <div className="text-4xl font-bold">My projects</div>
         <div id="projects-container" className="overflow-y-scroll max-h-[50vh] flex flex-col gap-8 mt-8">
         {
         projects.map((project) => {
           return(
             <div className="flex flex-row justify-start gap-4">
-              <img src={project.image} alt="" width={'300px'} className={'border rounded-md'}/>
+              <img src={project.image} alt="" width={'30%'} className={'border rounded-md'}/>
               <div className="flex flex-col n">
               <div className="text-2xl font-bold">{project.title}</div>
               <div className="text-xl opacity-80">{project.description}</div>
@@ -54,7 +54,7 @@ export default function ProjectsPage({}: Props) {
         })
         }
         </div>
-        <div id="projects-skill-filter" className="items-center p-4 gap-4 flex hover:opacity-100 cursor-pointer">
+        <div id="projects-skill-filter" className="items-center py-4 gap-4 flex hover:opacity-100 cursor-pointer">
           Filter projects based on skills:
           <span className="gap-4 flex p-4 rounded-md">
           <span className="badge badge-outline badge-warning opacity-50 hover:opacity-100 cursor-pointer">html</span>
@@ -65,7 +65,11 @@ export default function ProjectsPage({}: Props) {
         </div>
       </div>
       <div id="projects-contact" className="row-start-2 col-start-9 col-end-12">
-        <div className="text-2xl font-bold">Let's get in touch!</div>{" "}
+        <div className="text-2xl font-bold">Let's get in touch!</div>
+        <div className="text-xl opacity-80 mt-4">
+          I am always open to new opportunities and challenges. If you have any
+          questions or want to work together, feel free to contact me!
+          </div>
       </div>
     </>
   );
