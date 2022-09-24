@@ -83,8 +83,8 @@ export default function ProjectsPage({}: Props) {
             id="projects-skill-filter"
             className="items-center gap-4 flex hover:opacity-100 cursor-pointer"
           >
-            <span className="opacity-60 font-bold">Filter by skill:</span>
-            <span className="gap-4 flex p-4 rounded-md">
+            <span className="opacity-70">Filter op skill:</span>
+            <span className="gap-4 flex py-2 rounded-md">
               <span className="badge badge-outline badge-warning opacity-50 hover:opacity-100 cursor-pointer">
                 html
               </span>
