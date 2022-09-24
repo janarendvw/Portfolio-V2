@@ -15,6 +15,7 @@ body{
 #about-me-image {
   animation: slideInFromRight 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
+
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
