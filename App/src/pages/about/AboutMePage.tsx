@@ -11,13 +11,21 @@ export default function AboutMePage({}: Props) {
         <div>
           <div className="text-4xl font-bold">About Me</div>
           <div id="about-me-text-p" className="text-xl opacity-80 mt-4">
-            Nice to meet you here! My name is Jan and I am a 22 year old full stack developer from
-            with a key interest in visual design and data
-            science.
+            Nice to meet you here! My name is Jan and I am a 22 year old full
+            stack developer from with a key interest in visual design and data
+            science. 
+            <br/><br/>
+            Since I was little I have a great passion for technology
+            and design, and my main focus is to construct inspiring and
+            minimalistic design. You can see my progress and experience in the
+            projects tab.
           </div>
         </div>
-        <Link to={"/projects"} className="btn btn-primary btn-lg w-max mt-4 gap-4">
-         <Clipboard/> Projects
+        <Link
+          to={"/projects"}
+          className="btn btn-primary btn-lg w-max mt-4 gap-4"
+        >
+          <Clipboard /> Projects
         </Link>
       </div>
       <div
