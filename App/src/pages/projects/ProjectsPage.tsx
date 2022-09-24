@@ -1,4 +1,5 @@
 import React from "react";
+import { XCircle } from "react-feather";
 
 type Props = {};
 const projects = [
