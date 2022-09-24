@@ -1,4 +1,5 @@
 import React from "react";
+import { User } from "react-feather";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -15,13 +16,11 @@ export default function HomePage({}: Props) {
       </div>
       <div id="home-hero-right" className="w-96">
         <div className="text-2xl font-bold">Hi! My name is Jan.</div>
-        <div className="text-xl opacity-80">
+        <div className="text-xl opacity-80 mt-4">
           I am a 22 year old full stack developer from the Netherlands with a
           key interest in visual design and data science.
         </div>
-        <span id="pagelink">
-        <Link to={"/about-me"} className="btn btn-primary btn-lg mt-8">About me</Link>
-        </span>
+        <Link to={"/about-me"} className="btn btn-primary btn-lg mt-8 gap-4"><User/>About me</Link>
       </div>
      
     </div>

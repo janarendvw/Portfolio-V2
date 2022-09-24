@@ -1,4 +1,5 @@
 import React from "react";
+import { Clipboard } from "react-feather";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -15,8 +16,8 @@ export default function AboutMePage({}: Props) {
             science.
           </div>
         </div>
-        <Link to={"/projects"} className="btn btn-primary btn-lg w-min mt-4">
-          Projects
+        <Link to={"/projects"} className="btn btn-primary btn-lg w-max mt-4 gap-4">
+         <Clipboard/> Projects
         </Link>
       </div>
       <div
