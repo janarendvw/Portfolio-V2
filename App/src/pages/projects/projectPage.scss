@@ -1,16 +1,22 @@
 
     #project {
-        animation: fadeIn 1s ease-out forwards;
-        animation-delay: calc(var(--animation-order) * 300ms);
+        animation: fadeIn 600ms ease-out forwards;
+        animation-delay: calc(var(--animation-order) * 200ms);
         opacity: 0;
+    }
+    #projects-scroller{
+        transition-duration: 500ms;
     }
 
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        scale: 0.8;
     }
     100% {
+
         opacity: 1;
+        scale: 1;
     }
 }
 
