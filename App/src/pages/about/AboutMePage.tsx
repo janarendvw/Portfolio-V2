@@ -7,7 +7,7 @@ type Props = {};
 export default function AboutMePage({}: Props) {
   return (
     <div className="flex justify-between items-between col-start-2 col-span-10 row-start-2">
-      <div id="about-me-text" className="w-1/3 flex flex-col justify-between">
+      <div id="about-me-text" className="w-1/3 flex flex-col">
         <div>
           <div className="text-4xl font-bold">About Me</div>
           <div id="about-me-text-p" className="text-xl opacity-80 mt-4">
@@ -23,16 +23,17 @@ export default function AboutMePage({}: Props) {
         </div>
         <Link
           to={"/projects"}
-          className="btn btn-primary btn-lg w-max mt-4 gap-4"
+          className="btn btn-primary btn-lg w-max mt-16 gap-4"
         >
           <Clipboard /> Projects
         </Link>
       </div>
       <div
         id="about-me-image"
-        className="w-1/3"
-        style={{ background: "gray" }}
-      ></div>
+        className="w-1/4 flex h-full"
+      >
+        <img src="/images/about-me.svg" alt="about me" />
+      </div>
     </div>
   );
 }
