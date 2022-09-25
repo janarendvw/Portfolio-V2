@@ -1,35 +1,68 @@
-
-    #project {
-        animation: fadeIn 600ms ease-out forwards;
-        animation-delay: calc(var(--animation-order) * 200ms);
-        opacity: 0;
-    }
+#project {
+  animation: fadeIn 500ms ease-out forwards;
+  animation-delay: calc(700ms + var(--animation-order) * 100ms);
+  opacity: 0;
+}
 #project:hover #project-description {
-        opacity: 1;
-    }
-    #projects-scroller{
-        transition-duration: 500ms;
-    }
+  opacity: 80%;
+  display: block;
+}
+#project:hover #project-tags {
+  display: none;
+}
+#projects-scroller {
+    animation: expand 500ms ease-out forwards;
+    animation-delay: 700ms;
+  position: relative;
+
+
+
+  // &::before {
+  //   content: "";
+  //   position: sticky;
+  //   box-shadow: 0px 0px 20px 10px #070707;
+  //   top: 0;
+  //   left: 0;
+  //   width: 0px;
+  //   height: 100%;
+  //   z-index: 1;
+  // }
+
+  // &::after {
+  //   content: "";
+  //   position: sticky;
+  //   box-shadow: 0px 0px 20px 10px #070707;
+  //   top: 0;
+  //   right: 0;
+  //   width: 0px;
+  //   height: 100%;
+  //   z-index: 1;
+  // }
+}
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        scale: 0.8;
-    }
-    100% {
-
-        opacity: 1;
-        scale: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInFromBottom {
-    0% {
-        transform: translateY(100%);
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+    0%{
+        padding-block: 0rem;
     }
-    100% {
-        transform: translateY(0);
+    100%{
+        padding-block: 2rem;
     }
 }
-    
-    

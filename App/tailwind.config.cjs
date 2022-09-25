@@ -13,14 +13,14 @@ module.exports = {
       {
         mytheme: {
           primary: "#4663FD",
-          secondary: "#f6d860",
+          secondary: "#F9FAFB",
           accent: "#37cdbe",
           neutral: "#3d4451",
           "base-100": "#070707",
 
           "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
-          "--rounded-btn": "5px", // border radius rounded-btn utility class, used in buttons and similar element
-          "--rounded-badge": "3px", // border radius rounded-badge utility class, used in badges and similar
+          "--rounded-btn": "0px", // border radius rounded-btn utility class, used in buttons and similar element
+          "--rounded-badge": "0px", // border radius rounded-badge utility class, used in badges and similar
           "--animation-btn": "0.25s", // duration of animation when you click on button
           "--animation-input": "0.2s", // duration of animation for inputs like checkbox, toggle, radio, etc
           "--btn-text-case": "capitalize", // set default text transform for buttons
