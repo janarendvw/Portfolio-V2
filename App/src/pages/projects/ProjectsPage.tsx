@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Code,
-  ExternalLink,
-} from "react-feather";
+import { Code, ExternalLink } from "react-feather";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
@@ -115,20 +112,43 @@ export default function ProjectsPage({}: Props) {
           </div>
         </div>
         <div id="projects-container" className="pt-8 pb-4">
-        <Timeline />
+          <Timeline />
           <div
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
           >
             {projects.map((project, index) => {
-              return (
-               <Project key={index} title={project.title} description={project.description} image={project.image} date={project.date} tags={project.tags} />
-              );
+              if (index === 0) {
+                return (
+                  <div className="indicator border border-primary rounded-box ">
+                    <span className="indicator-item badge badge-primary ">
+                      new
+                    </span>
+                    <Project
+                      key={index}
+                      index={index}
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                      tags={project.tags}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <Project
+                    key={index}
+                    index={index}
+                    title={project.title}
+                    description={project.description}
+                    image={project.image}
+                    tags={project.tags}
+                  />
+                );
+              }
             })}
           </div>
-        
         </div>
-      
       </div>
       <div id="projects-contact" className="w-1/4">
         <div className="text-2xl font-bold">Let's talk!</div>

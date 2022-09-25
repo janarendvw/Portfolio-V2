@@ -3,6 +3,14 @@
   animation-delay: calc(700ms + var(--animation-order) * 100ms);
   opacity: 0;
 }
+
+#project-tooltip {
+  animation: fadeIn 500ms ease-out forwards;
+  animation-delay: calc(2000ms + var(--animation-order) * 100ms);
+  opacity: 1;
+  display: block!important;
+  visibility: visible!important;
+}
 #project:hover #project-description {
   opacity: 80%;
   display: block;
