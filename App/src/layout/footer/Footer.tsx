@@ -5,7 +5,7 @@ type Props = {};
 
 export default function Footer({}: Props) {
   return (
-    <div className="col-start-0 col-span-12 row-start-3 self-end py-4 px-4 bg-white/5">
+    <div className="col-start-0 col-span-1 row-start-3 self-end p-4">
       <Socials />
     </div>
   );

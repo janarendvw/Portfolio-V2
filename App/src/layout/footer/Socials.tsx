@@ -8,10 +8,10 @@ export default function Socials({}: Props) {
   return (
     <div className="flex gap-4">
       <a className="opacity-70 hover:opacity-100" href={"https://github.com"} target={'_blank'}>
-        <GitHub size={16} />
+        <GitHub size={20} />
       </a>
       <a className="opacity-70 hover:opacity-100" href={"https://linkedin.com"} target={'_blank'}>
-        <Linkedin size={16} />
+        <Linkedin size={20} />
       </a>
     </div>
   );
