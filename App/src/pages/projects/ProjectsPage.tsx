@@ -120,7 +120,7 @@ export default function ProjectsPage({}: Props) {
             {projects.map((project, index) => {
               if (index === 0) {
                 return (
-                  <div className="indicator border border-primary rounded-box ">
+                  <div id="project" className="indicator border border-primary rounded-box" style={{"--animation-order": index} as React.CSSProperties}>
                     <span className="indicator-item badge badge-primary ">
                       new
                     </span>
