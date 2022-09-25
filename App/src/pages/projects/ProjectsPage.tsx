@@ -3,6 +3,7 @@ import {
   Code,
   ExternalLink,
 } from "react-feather";
+import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
 import "./projectPage.scss";
@@ -121,53 +122,7 @@ export default function ProjectsPage({}: Props) {
           >
             {projects.map((project, index) => {
               return (
-                <div
-                  style={
-                    {
-                      background: `url(${project.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      "--animation-order": index,
-                    } as React.CSSProperties
-                  }
-                  id="project"
-                  className="snap-center h-96 w-96 text-white flex flex-col justify-between overflow-hidden duration-100"
-                >
-                  <div className="bg-black/60 hover:bg-black/90 duration-200 h-full flex flex-col justify-between">
-                    <div id="project-text" className="p-4">
-                      <div id="project-header" className="flex justify-between items-center">
-                        <div className="text-xl pb-2">
-                          {project.title}
-                        </div>
-                      </div>
-                      <div
-                        id="project-description"
-                        className="text-md opacity-0 hidden mt-4 flex"
-                      >
-                        {project.description}
-                      </div>
-                    </div>
-                    <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
-                        {project.tags.map((tag) => {
-                          return (<span className="badge badge-secondary badge-outline tracking-wide">{tag}</span>)})}
-                      </div>
-                    <span className="flex justify-between p-4 items-center">
-                      <a
-                        className="btn btn-sm btn-primary mt-4 w-max flex gap-2"
-                        href="#"
-                      >
-                        <ExternalLink size={16} /> visit
-                      </a>
-                      <a
-                        className="btn btn-sm btn-secondary btn-outline mt-4 w-max flex gap-2"
-                        href="#"
-                      >
-                        <Code size={16} />
-                        code
-                      </a>
-                    </span>
-                  </div>
-                </div>
+               <Project key={index} title={project.title} description={project.description} image={project.image} date={project.date} tags={project.tags} />
               );
             })}
           </div>
