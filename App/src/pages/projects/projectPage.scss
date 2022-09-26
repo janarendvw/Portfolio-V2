@@ -1,6 +1,6 @@
 #project {
   animation: fadeIn 500ms ease-out forwards;
-  animation-delay: calc(700ms + var(--animation-order) * 100ms);
+  animation-delay: calc(700ms + var(--animation-order) * 300ms);
   opacity: 0;
 }
 
