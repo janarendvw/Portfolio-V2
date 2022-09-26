@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Code, ExternalLink } from "react-feather";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
 import "./projectPage.scss";
 type Props = {};
+
 const projects = [
   {
     id: 1,
@@ -13,7 +14,7 @@ const projects = [
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
     image: "https://picsum.photos/600/300",
     date: "2021-01-01",
-    tags: ["React", "Typescript", "Tailwind"],
+    tags: ["React", "Typescript", "SCSS"],
   },
   {
     id: 2,
@@ -52,7 +53,10 @@ const projects = [
     tags: ["React", "Typescript", "Tailwind"],
   },
 ];
+
 export default function ProjectsPage({}: Props) {
+  let skillList: any = [];
+  const [uniqueSkillList, setUniqueSkillList] = useState([]);
   useEffect(() => {
     const slider: any = document.querySelector("#projects-scroller");
     let isDown = false;
@@ -83,6 +87,19 @@ export default function ProjectsPage({}: Props) {
         slider.scrollLeft = scrollLeft - walk;
       }
     );
+
+    function onlyUnique(value: any, index: number, self: any) {
+      return self.indexOf(value) === index;
+    }
+
+    const addSkills = () => {
+      projects.map((project) => {
+        skillList.push(...project.tags);
+      });
+      setUniqueSkillList(skillList.filter(onlyUnique));
+    };
+
+    addSkills();
   }, []);
 
   return (
@@ -92,23 +109,16 @@ export default function ProjectsPage({}: Props) {
           <div className="text-4xl font-bold">My projects</div>
           <div
             id="projects-skill-filter"
-            className="items-center gap-4 flex hover:opacity-100 cursor-pointer"
+            className="items-center gap-4 flex hover:opacity-100"
           >
             <span className="opacity-70">Filter by skill:</span>
-            <span className="gap-4 flex py-2">
-              <span className="badge badge-outline badge-secondary opacity-90 hover:opacity-100 cursor-pointer">
-                html
-              </span>
-              <span className="badge badge-outline badge-secondary opacity-90 hover:opacity-100 cursor-pointer">
-                Wordpress
-              </span>
-              <span className="badge badge-secondary cursor-pointer">
-                React js
-              </span>
-              <span className="badge badge-outline badge-secondary opacity-90 hover:opacity-100 cursor-pointer">
-                Vue js
-              </span>
-            </span>
+            {uniqueSkillList.map((skill) => {
+              return (
+                <span className="badge hover:border-primary badge-secondary badge-outline cursor-pointer">
+                  {skill}
+                </span>
+              );
+            })}
           </div>
         </div>
         <div id="projects-container" className="pt-8 pb-4">
@@ -120,7 +130,13 @@ export default function ProjectsPage({}: Props) {
             {projects.map((project, index) => {
               if (index === 0) {
                 return (
-                  <div id="project" className="indicator border border-primary rounded-box" style={{"--animation-order": index} as React.CSSProperties}>
+                  <div
+                    id="project"
+                    className="indicator border border-primary rounded-box"
+                    style={
+                      { "--animation-order": index } as React.CSSProperties
+                    }
+                  >
                     <span className="indicator-item badge badge-primary ">
                       new
                     </span>
