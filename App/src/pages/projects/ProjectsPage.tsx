@@ -56,7 +56,10 @@ const projects = [
 
 export default function ProjectsPage({}: Props) {
   let skillList: any = [];
+  const [selectedSkill, setSelectedSkill] = useState("Tailwind");
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
+  const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
+
   useEffect(() => {
     const slider: any = document.querySelector("#projects-scroller");
     let isDown = false;
@@ -98,9 +101,17 @@ export default function ProjectsPage({}: Props) {
       });
       setUniqueSkillList(skillList.filter(onlyUnique));
     };
-
     addSkills();
-  }, []);
+
+    const filteredProjects = projects.filter(project => {
+      return(project.tags.includes(selectedSkill))
+
+    })
+
+    setFilteredProjectsList(filteredProjects)
+
+    console.log(filteredProjectsList)
+  }, [selectedSkill]);
 
   return (
     <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
@@ -127,7 +138,9 @@ export default function ProjectsPage({}: Props) {
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
           >
-            {projects.map((project, index) => {
+            {
+
+            filteredProjectsList.map((project:any, index:number) => {
               if (index === 0) {
                 return (
                   <div
