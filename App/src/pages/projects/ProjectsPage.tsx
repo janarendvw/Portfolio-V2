@@ -193,7 +193,7 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
-                  <div className="border border-base-100">
+                  <div className="border border-base-100 rounded-box">
                   <Project
                     selectedSkill={selectedSkill}
                     key={index}
