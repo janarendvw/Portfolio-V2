@@ -12,7 +12,7 @@ const projects = [
     title: "Project 1",
     description:
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
-    image: "https://picsum.photos/600/300",
+    image: "https://picsum.photos/900/600",
     date: "2021-01-01",
     tags: ["React", "Typescript", "SCSS"],
   },
@@ -21,7 +21,7 @@ const projects = [
     title: "Project 2",
     description:
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
-    image: "https://picsum.photos/200/300",
+    image: "https://picsum.photos/800/500",
     date: "2021-01-02",
     tags: ["Html", "Typescript", "Tailwind"],
   },
@@ -30,7 +30,7 @@ const projects = [
     title: "Project 3",
     description:
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
-    image: "https://picsum.photos/300/300",
+    image: "https://picsum.photos/1000/800",
     date: "2021-01-03",
     tags: ["React", "Typescript", "Vue"],
   },
@@ -39,7 +39,7 @@ const projects = [
     title: "Project 4",
     description:
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
-    image: "https://picsum.photos/800/300",
+    image: "https://picsum.photos/800/600",
     date: "2021-01-04",
     tags: ["React", "Typescript", "Tailwind", "CSS", "Nuxt"],
   },

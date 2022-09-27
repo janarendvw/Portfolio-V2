@@ -16,7 +16,7 @@ export default function Project({image, index, title, description, tags, selecte
     style={
       {
         background: `url(${image})`,
-        backgroundSize: "cover",
+        backgroundSize: "200%",
         backgroundPosition: "center",
         "--animation-order": index,
       } as React.CSSProperties
@@ -41,12 +41,12 @@ export default function Project({image, index, title, description, tags, selecte
       <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
           {tags.map((tag) => {
             if (tag === selectedSkill) {
-            return (<span className="badge badge-secondary tracking-wide">{tag}</span>)}
+            return (<span className="badge  badge-secondary tracking-wide font-bold">{tag}</span>)}
             else {
-              return (<span className="badge badge-secondary badge-outline tracking-wide opacity-50">{tag}</span>)
+              return (<span className="badge badge-outline tracking-wide opacity-70">{tag}</span>)
               }})}
         </div>
-      <span className="flex justify-between p-4 items-center">
+      <span className="flex justify-between px-4 pb-4 items-center">
         <a
           className="btn btn-sm btn-primary mt-4 w-max flex gap-2"
           href="#"
