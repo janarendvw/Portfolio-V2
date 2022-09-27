@@ -30,8 +30,10 @@ export default function AboutMePage({}: Props) {
       </div>
       <div
         id="about-me-image"
-        className="w-1/3 bg-white/10"
-      ></div>
+        className="w-1/4 flex h-full"
+      >
+        <img src="/images/about-me.svg" alt="about me" />
+      </div>
     </div>
   );
 }
