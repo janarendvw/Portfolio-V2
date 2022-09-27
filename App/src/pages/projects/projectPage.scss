@@ -1,7 +1,4 @@
 #project {
-  animation: fadeIn 500ms ease-out forwards;
-  animation-delay: calc(var(--animation-order) * 100ms);
-  opacity: 0;
 }
 
 #project-tooltip {
@@ -20,32 +17,11 @@
 }
 #projects-scroller {
     animation: expand 500ms ease-out forwards;
-    animation-delay: 700ms;
+    animation-delay: 70ms;
   position: relative;
-
-
-
-  // &::before {
-  //   content: "";
-  //   position: sticky;
-  //   box-shadow: 0px 0px 20px 10px #070707;
-  //   top: 0;
-  //   left: 0;
-  //   width: 0px;
-  //   height: 100%;
-  //   z-index: 1;
-  // }
-
-  // &::after {
-  //   content: "";
-  //   position: sticky;
-  //   box-shadow: 0px 0px 20px 10px #070707;
-  //   top: 0;
-  //   right: 0;
-  //   width: 0px;
-  //   height: 100%;
-  //   z-index: 1;
-  // }
+}
+#projects-scroller::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes fadeIn {

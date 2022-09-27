@@ -23,7 +23,7 @@ const projects = [
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
     image: "https://picsum.photos/800/500",
     date: "2021-01-02",
-    tags: ["Html", "Typescript", "Tailwind"],
+    tags: ["Html", "WASM", "Tailwind"],
   },
   {
     id: 3,
@@ -62,6 +62,8 @@ export default function ProjectsPage({}: Props) {
 
   useEffect(() => {
     const slider: any = document.querySelector("#projects-scroller");
+    const timelineBar: any = document.querySelector("#timeline-thumb");
+    const timelineTrack: any = document.querySelector("#timeline-track");
     let isDown = false;
     let startX: any;
     let scrollLeft: any;
@@ -90,6 +92,14 @@ export default function ProjectsPage({}: Props) {
         slider.scrollLeft = scrollLeft - walk;
       }
     );
+
+    slider?.addEventListener("scroll", () => {
+      const scrollPercent =
+        (slider.scrollLeft / (slider.scrollWidth - slider.clientWidth)) * 100;
+      timelineBar.style.left = `calc(${scrollPercent}% - ${timelineBar.clientWidth/2}px )`;
+
+    });
+
 
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
@@ -120,28 +130,29 @@ export default function ProjectsPage({}: Props) {
   return (
     <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-2/3">
-        <div className="flex flex-col lg:flex-row md:justify-between items-start pb-4">
+        <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
           <div
             id="projects-skill-filter"
             className="items-center gap-4 flex hover:opacity-100"
           >
-            <div className="dropdown">
-              <span className="opacity-70">Filter by skill:</span>
+             <span className="opacity-70">Filtered by skill:</span>
+            <div className="dropdown dropdown-right">
+             
               <label
                 tabIndex={0}
-                className="font-bold mx-5 inline-flex gap-2 cursor-pointer"
+                className="font-bold ml-5 inline-flex gap-2 cursor-pointer"
               >
                 {selectedSkill} <ChevronDown />
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+                className="dropdown-content menu border border-secondary bg-base-100 rounded-box w-52"
               >
                 {uniqueSkillList.map((skill) => {
                   return (
                     <span
-                      className="cursor-pointer hover:bg-primary px-2"
+                      className="cursor-pointer hover:bg-secondary hover:text-base-100 px-2"
                       onClick={() => {
                         setSelectedSkill(skill);
                       }}
@@ -155,7 +166,7 @@ export default function ProjectsPage({}: Props) {
           </div>
         </div>
         <div id="projects-container" className="pt-8 pb-4">
-          <Timeline />
+          
           <div
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
@@ -164,11 +175,7 @@ export default function ProjectsPage({}: Props) {
               if (project.id === 1) {
                 return (
                   <div
-                    id="project"
                     className="indicator border border-primary rounded-box"
-                    style={
-                      { "--animation-order": index } as React.CSSProperties
-                    }
                   >
                     <span className="indicator-item badge badge-primary ">
                       new
@@ -186,6 +193,7 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
+                  <div className="border border-base-100">
                   <Project
                     selectedSkill={selectedSkill}
                     key={index}
@@ -195,10 +203,12 @@ export default function ProjectsPage({}: Props) {
                     image={project.image}
                     tags={project.tags}
                   />
+                  </div>
                 );
               }
             })}
           </div>
+          <Timeline />
         </div>
       </div>
       <div id="projects-contact" className="w-1/4">

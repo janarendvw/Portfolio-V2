@@ -41,7 +41,7 @@ export default function Project({image, index, title, description, tags, selecte
       <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
           {tags.map((tag) => {
             if (tag === selectedSkill) {
-            return (<span className="badge  badge-secondary tracking-wide font-bold">{tag}</span>)}
+            return (<span className="badge  bg-white text-black tracking-wide font-bold">{tag}</span>)}
             else {
               return (<span className="badge badge-outline tracking-wide opacity-70">{tag}</span>)
               }})}
@@ -54,7 +54,7 @@ export default function Project({image, index, title, description, tags, selecte
           <ExternalLink size={16} /> visit
         </a>
         <a
-          className="btn btn-sm btn-secondary btn-outline mt-4 w-max flex gap-2"
+          className="btn btn-sm border-white text-white btn-outline mt-4 w-max flex gap-2"
           href="#"
         >
           <Code size={16} />
