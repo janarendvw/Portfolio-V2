@@ -6,10 +6,11 @@ type Props = {
     index: number,
     title: string,
     description: string,
-    tags: string[]
+    tags: string[],
+    selectedSkill: string,
 }
 
-export default function Project({image, index, title, description, tags}: Props) {
+export default function Project({image, index, title, description, tags, selectedSkill}: Props) {
   return (
     <div
     style={
@@ -39,7 +40,11 @@ export default function Project({image, index, title, description, tags}: Props)
       </div>
       <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
           {tags.map((tag) => {
-            return (<span className="badge badge-secondary badge-outline tracking-wide">{tag}</span>)})}
+            if (tag === selectedSkill) {
+            return (<span className="badge badge-secondary tracking-wide">{tag}</span>)}
+            else {
+              return (<span className="badge badge-secondary badge-outline tracking-wide opacity-50">{tag}</span>)
+              }})}
         </div>
       <span className="flex justify-between p-4 items-center">
         <a

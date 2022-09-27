@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Code, ExternalLink } from "react-feather";
+import { ChevronDown, Code, ExternalLink } from "react-feather";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
@@ -56,7 +56,7 @@ const projects = [
 
 export default function ProjectsPage({}: Props) {
   let skillList: any = [];
-  const [selectedSkill, setSelectedSkill] = useState("Tailwind");
+  const [selectedSkill, setSelectedSkill] = useState("All");
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
 
@@ -96,6 +96,7 @@ export default function ProjectsPage({}: Props) {
     }
 
     const addSkills = () => {
+      skillList.push("All");
       projects.map((project) => {
         skillList.push(...project.tags);
       });
@@ -103,14 +104,17 @@ export default function ProjectsPage({}: Props) {
     };
     addSkills();
 
-    const filteredProjects = projects.filter(project => {
-      return(project.tags.includes(selectedSkill))
+    const filteredProjects = projects.filter((project) => {
+      if (selectedSkill === "All") {
+        return project;
+      } else {
+        return project.tags.includes(selectedSkill);
+      }
+    });
 
-    })
+    setFilteredProjectsList(filteredProjects);
 
-    setFilteredProjectsList(filteredProjects)
-
-    console.log(filteredProjectsList)
+    console.log(filteredProjectsList);
   }, [selectedSkill]);
 
   return (
@@ -122,14 +126,32 @@ export default function ProjectsPage({}: Props) {
             id="projects-skill-filter"
             className="items-center gap-4 flex hover:opacity-100"
           >
-            <span className="opacity-70">Filter by skill:</span>
-            {uniqueSkillList.map((skill) => {
-              return (
-                <span className="badge hover:border-primary badge-secondary badge-outline cursor-pointer">
-                  {skill}
-                </span>
-              );
-            })}
+            <div className="dropdown">
+              <span className="opacity-70">Filter by skill:</span>
+              <label
+                tabIndex={0}
+                className="font-bold mx-5 inline-flex gap-2 cursor-pointer"
+              >
+                {selectedSkill} <ChevronDown />
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                {uniqueSkillList.map((skill) => {
+                  return (
+                    <span
+                      className="cursor-pointer hover:bg-primary px-2"
+                      onClick={() => {
+                        setSelectedSkill(skill);
+                      }}
+                    >
+                      {skill === selectedSkill ? <span className="text-secondary font-bold">{skill}</span> : skill}
+                    </span>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
         <div id="projects-container" className="pt-8 pb-4">
@@ -138,10 +160,8 @@ export default function ProjectsPage({}: Props) {
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
           >
-            {
-
-            filteredProjectsList.map((project:any, index:number) => {
-              if (index === 0) {
+            {filteredProjectsList.map((project: any, index: number) => {
+              if (project.id === 1) {
                 return (
                   <div
                     id="project"
@@ -154,8 +174,9 @@ export default function ProjectsPage({}: Props) {
                       new
                     </span>
                     <Project
+                    selectedSkill={selectedSkill}
                       key={index}
-                      index={index}
+                      index={project.id}
                       title={project.title}
                       description={project.description}
                       image={project.image}
@@ -166,6 +187,7 @@ export default function ProjectsPage({}: Props) {
               } else {
                 return (
                   <Project
+                    selectedSkill={selectedSkill}
                     key={index}
                     index={index}
                     title={project.title}
