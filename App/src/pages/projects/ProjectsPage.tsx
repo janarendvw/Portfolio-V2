@@ -61,46 +61,6 @@ export default function ProjectsPage({}: Props) {
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
 
   useEffect(() => {
-    const slider: any = document.querySelector("#projects-scroller");
-    const timelineBar: any = document.querySelector("#timeline-thumb");
-    const timelineTrack: any = document.querySelector("#timeline-track");
-    let isDown = false;
-    let startX: any;
-    let scrollLeft: any;
-
-    slider?.addEventListener("mousedown", (e: { pageX: number }) => {
-      isDown = true;
-      slider.classList.add("active");
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider?.addEventListener("mouseleave", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider?.addEventListener("mouseup", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider?.addEventListener(
-      "mousemove",
-      (e: { preventDefault: () => void; pageX: number }) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = x - startX;
-        slider.scrollLeft = scrollLeft - walk;
-      }
-    );
-
-    slider?.addEventListener("scroll", () => {
-      const scrollPercent =
-        (slider.scrollLeft / (slider.scrollWidth - slider.clientWidth)) * 100;
-      timelineBar.style.left = `calc(${scrollPercent}% - ${timelineBar.clientWidth/2}px )`;
-
-    });
-
-
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
     }
