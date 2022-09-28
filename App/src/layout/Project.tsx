@@ -39,11 +39,11 @@ export default function Project({image, index, title, description, tags, selecte
         </div>
       </div>
       <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
-          {tags.map((tag) => {
+          {tags.map((tag, index) => {
             if (tag === selectedSkill) {
-            return (<span className="badge bg-white border-none text-black tracking-wide font-bold">{tag}</span>)}
+            return (<span key={index} className="badge bg-white border-none text-black tracking-wide font-bold">{tag}</span>)}
             else {
-              return (<span className="badge badge-outline tracking-wide opacity-70">{tag}</span>)
+              return (<span key={index} className="badge badge-outline tracking-wide opacity-70">{tag}</span>)
               }})}
         </div>
       <span className="flex justify-between px-4 pb-4 items-center">

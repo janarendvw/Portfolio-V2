@@ -85,7 +85,6 @@ export default function ProjectsPage({}: Props) {
 
     setFilteredProjectsList(filteredProjects);
     setNumberOfProjectsShown(filteredProjects.length);
-    console.log(filteredProjectsList);
   }, [selectedSkill]);
 
   return (
@@ -115,9 +114,10 @@ export default function ProjectsPage({}: Props) {
                 tabIndex={0}
                 className="dropdown-content menu border border-secondary bg-base-100 rounded-box w-52"
               >
-                {uniqueSkillList.map((skill) => {
+                {uniqueSkillList.map((skill, index) => {
                   return (
                     <span
+                    key={index}
                       className="cursor-pointer hover:bg-secondary hover:text-base-100 px-2"
                       onClick={() => {
                         setSelectedSkill(skill);
@@ -139,6 +139,7 @@ export default function ProjectsPage({}: Props) {
               if (project.id === 1) {
                 return (
                   <div
+                    key={index}
                     className="indicator border border-primary rounded-box"
                   >
                     <span className="indicator-item badge badge-primary ">
@@ -146,7 +147,6 @@ export default function ProjectsPage({}: Props) {
                     </span>
                     <Project
                     selectedSkill={selectedSkill}
-                      key={index}
                       index={project.id}
                       title={project.title}
                       description={project.description}
@@ -157,10 +157,9 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
-                  <div className="border border-base-100 rounded-box">
+                  <div className="border border-base-100 rounded-box" key={index}>
                   <Project
                     selectedSkill={selectedSkill}
-                    key={index}
                     index={index}
                     title={project.title}
                     description={project.description}
