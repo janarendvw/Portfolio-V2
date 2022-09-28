@@ -59,48 +59,9 @@ export default function ProjectsPage({}: Props) {
   const [selectedSkill, setSelectedSkill] = useState("All");
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
+  const [numberOfProjectsShown, setNumberOfProjectsShown] = useState(0);
 
   useEffect(() => {
-    const slider: any = document.querySelector("#projects-scroller");
-    const timelineBar: any = document.querySelector("#timeline-thumb");
-    const timelineTrack: any = document.querySelector("#timeline-track");
-    let isDown = false;
-    let startX: any;
-    let scrollLeft: any;
-
-    slider?.addEventListener("mousedown", (e: { pageX: number }) => {
-      isDown = true;
-      slider.classList.add("active");
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider?.addEventListener("mouseleave", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider?.addEventListener("mouseup", () => {
-      isDown = false;
-      slider.classList.remove("active");
-    });
-    slider?.addEventListener(
-      "mousemove",
-      (e: { preventDefault: () => void; pageX: number }) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - slider.offsetLeft;
-        const walk = x - startX;
-        slider.scrollLeft = scrollLeft - walk;
-      }
-    );
-
-    slider?.addEventListener("scroll", () => {
-      const scrollPercent =
-        (slider.scrollLeft / (slider.scrollWidth - slider.clientWidth)) * 100;
-      timelineBar.style.left = `calc(${scrollPercent}% - ${timelineBar.clientWidth/2}px )`;
-
-    });
-
-
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
     }
@@ -110,7 +71,7 @@ export default function ProjectsPage({}: Props) {
       projects.map((project) => {
         skillList.push(...project.tags);
       });
-      setUniqueSkillList(skillList.filter(onlyUnique));
+      setUniqueSkillList(skillList.filter(onlyUnique).sort());
     };
     addSkills();
 
@@ -120,11 +81,10 @@ export default function ProjectsPage({}: Props) {
       } else {
         return project.tags.includes(selectedSkill);
       }
-    });
+    })
 
     setFilteredProjectsList(filteredProjects);
-
-    console.log(filteredProjectsList);
+    setNumberOfProjectsShown(filteredProjects.length);
   }, [selectedSkill]);
 
   return (
@@ -132,6 +92,11 @@ export default function ProjectsPage({}: Props) {
       <div id="projects-section" className="w-2/3">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
+         
+        </div>
+        <div id="projects-container" className="pt-8 pb-4">
+          <div className="flex justify-between">
+          <span className="p-0 text-sm"><span className="text-secondary font-bold mr-1">{numberOfProjectsShown}</span> {numberOfProjectsShown > 1 ? "projects" : "project"} shown</span>
           <div
             id="projects-skill-filter"
             className="items-center gap-4 flex hover:opacity-100"
@@ -141,7 +106,7 @@ export default function ProjectsPage({}: Props) {
              
               <label
                 tabIndex={0}
-                className="font-bold ml-5 inline-flex gap-2 cursor-pointer"
+                className="font-bold ml-5 inline-flex gap-2 cursor-pointer text-secondary"
               >
                 {selectedSkill} <ChevronDown />
               </label>
@@ -149,9 +114,10 @@ export default function ProjectsPage({}: Props) {
                 tabIndex={0}
                 className="dropdown-content menu border border-secondary bg-base-100 rounded-box w-52"
               >
-                {uniqueSkillList.map((skill) => {
+                {uniqueSkillList.map((skill, index) => {
                   return (
                     <span
+                    key={index}
                       className="cursor-pointer hover:bg-secondary hover:text-base-100 px-2"
                       onClick={() => {
                         setSelectedSkill(skill);
@@ -164,9 +130,7 @@ export default function ProjectsPage({}: Props) {
               </ul>
             </div>
           </div>
-        </div>
-        <div id="projects-container" className="pt-8 pb-4">
-          
+          </div>
           <div
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
@@ -175,6 +139,7 @@ export default function ProjectsPage({}: Props) {
               if (project.id === 1) {
                 return (
                   <div
+                    key={index}
                     className="indicator border border-primary rounded-box"
                   >
                     <span className="indicator-item badge badge-primary ">
@@ -182,7 +147,6 @@ export default function ProjectsPage({}: Props) {
                     </span>
                     <Project
                     selectedSkill={selectedSkill}
-                      key={index}
                       index={project.id}
                       title={project.title}
                       description={project.description}
@@ -193,10 +157,9 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
-                  <div className="border border-base-100">
+                  <div className="border border-base-100 rounded-box" key={index}>
                   <Project
                     selectedSkill={selectedSkill}
-                    key={index}
                     index={index}
                     title={project.title}
                     description={project.description}
@@ -211,7 +174,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="w-1/4">
+      <div id="projects-contact" className="w-1/4 flex flex-col">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any
