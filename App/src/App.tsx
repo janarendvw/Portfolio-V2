@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./layout/footer/Footer";
@@ -7,7 +6,6 @@ import AboutMePage from "./pages/about/AboutMePage";
 import ContactPage from "./pages/contact/ContactPage";
 import HomePage from "./pages/home/HomePage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
-import { themeChange } from "theme-change";
 
 function App() {
 
