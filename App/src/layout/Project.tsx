@@ -24,7 +24,7 @@ export default function Project({image, index, title, description, tags, selecte
     id="project"
     className="snap-center h-96 w-96 text-white flex flex-col justify-between overflow-hidden duration-100 card"
   >
-    <div className="bg-black/60 hover:bg-black/90 duration-200 h-full flex flex-col justify-between">
+    <div className="bg-black/10 hover:bg-black/90 duration-200 h-full flex flex-col justify-between">
       <div id="project-text" className="p-4">
         <div id="project-header" className="flex justify-between items-center">
           <div className="text-xl pb-2">
@@ -41,7 +41,7 @@ export default function Project({image, index, title, description, tags, selecte
       <div id="project-tags" className="flex p-4 gap-4 flex-wrap w-3/4 justify-center m-auto">
           {tags.map((tag) => {
             if (tag === selectedSkill) {
-            return (<span className="badge  bg-white text-black tracking-wide font-bold">{tag}</span>)}
+            return (<span className="badge bg-white border-none text-black tracking-wide font-bold">{tag}</span>)}
             else {
               return (<span className="badge badge-outline tracking-wide opacity-70">{tag}</span>)
               }})}
