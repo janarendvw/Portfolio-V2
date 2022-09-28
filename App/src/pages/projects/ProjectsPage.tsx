@@ -59,6 +59,7 @@ export default function ProjectsPage({}: Props) {
   const [selectedSkill, setSelectedSkill] = useState("All");
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
+  const [numberOfProjectsShown, setNumberOfProjectsShown] = useState(0);
 
   useEffect(() => {
     function onlyUnique(value: any, index: number, self: any) {
@@ -83,7 +84,7 @@ export default function ProjectsPage({}: Props) {
     })
 
     setFilteredProjectsList(filteredProjects);
-
+    setNumberOfProjectsShown(filteredProjects.length);
     console.log(filteredProjectsList);
   }, [selectedSkill]);
 
@@ -92,6 +93,11 @@ export default function ProjectsPage({}: Props) {
       <div id="projects-section" className="w-2/3">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
+         
+        </div>
+        <div id="projects-container" className="pt-8 pb-4">
+          <div className="flex justify-between">
+          <span className="p-0 text-sm"><span className="text-secondary font-bold mr-1">{numberOfProjectsShown}</span> {numberOfProjectsShown > 1 ? "projects" : "project"} shown</span>
           <div
             id="projects-skill-filter"
             className="items-center gap-4 flex hover:opacity-100"
@@ -101,7 +107,7 @@ export default function ProjectsPage({}: Props) {
              
               <label
                 tabIndex={0}
-                className="font-bold ml-5 inline-flex gap-2 cursor-pointer"
+                className="font-bold ml-5 inline-flex gap-2 cursor-pointer text-secondary"
               >
                 {selectedSkill} <ChevronDown />
               </label>
@@ -124,9 +130,7 @@ export default function ProjectsPage({}: Props) {
               </ul>
             </div>
           </div>
-        </div>
-        <div id="projects-container" className="pt-8 pb-4">
-          
+          </div>
           <div
             id="projects-scroller"
             className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
