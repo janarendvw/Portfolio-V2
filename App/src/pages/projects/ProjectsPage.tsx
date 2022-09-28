@@ -70,7 +70,7 @@ export default function ProjectsPage({}: Props) {
       projects.map((project) => {
         skillList.push(...project.tags);
       });
-      setUniqueSkillList(skillList.filter(onlyUnique));
+      setUniqueSkillList(skillList.filter(onlyUnique).sort());
     };
     addSkills();
 
@@ -80,7 +80,7 @@ export default function ProjectsPage({}: Props) {
       } else {
         return project.tags.includes(selectedSkill);
       }
-    });
+    })
 
     setFilteredProjectsList(filteredProjects);
 
