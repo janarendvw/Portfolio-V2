@@ -102,33 +102,19 @@ export default function ProjectsPage({}: Props) {
             className="items-center gap-4 flex hover:opacity-100"
           >
              <span className="opacity-70">Filtered by skill:</span>
-            <div className="dropdown dropdown-right">
-             
-              <label
-                tabIndex={0}
-                className="font-bold ml-5 inline-flex gap-2 cursor-pointer text-secondary"
-              >
-                {selectedSkill} <ChevronDown />
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu border border-secondary bg-base-100 rounded-box w-52"
-              >
+        <select className="cursor-pointer bg-transparent border-none text-secondary" onChange={(e) => setSelectedSkill(e.target.value)}>
                 {uniqueSkillList.map((skill, index) => {
                   return (
-                    <span
+                    <option
                     key={index}
-                      className="cursor-pointer hover:bg-secondary hover:text-base-100 px-2"
-                      onClick={() => {
-                        setSelectedSkill(skill);
-                      }}
-                    >
-                      {skill === selectedSkill ? <span className="text-secondary font-bold">{skill}</span> : skill}
-                    </span>
+                      className=" bg-base-100 hover:bg-secondary hover:text-base-100 px-2"
+                      value={skill}
+                    >{skill}</option>
+  
                   );
                 })}
-              </ul>
-            </div>
+              </select>
+
           </div>
           </div>
           <div
