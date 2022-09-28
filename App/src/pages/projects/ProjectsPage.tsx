@@ -171,7 +171,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="w-1/4">
+      <div id="projects-contact" className="w-1/4 flex flex-col">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any
