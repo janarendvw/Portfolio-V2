@@ -7,7 +7,7 @@ type Props = {};
 export default function AboutMePage({}: Props) {
   return (
     <div className="flex justify-between items-between col-start-2 col-span-10 row-start-2">
-      <div id="about-me-text" className="w-1/3 flex flex-col">
+      <div id="about-me-text" className="w-1/3 flex flex-col slide-up">
         <div>
           <div className="text-4xl font-bold">About Me</div>
           <div id="about-me-text-p" className="text-xl opacity-80 mt-4">
@@ -30,7 +30,7 @@ export default function AboutMePage({}: Props) {
       </div>
       <div
         id="about-me-image"
-        className="w-1/4 flex h-full"
+        className="w-1/4 flex h-full slide-right"
       >
         <img src="/images/about-me.svg" alt="about me" />
       </div>
