@@ -3,14 +3,14 @@ body{
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
   ::-webkit-scrollbar-track {
   background: #f1f1f100; 
 }
   ::-webkit-scrollbar-thumb {
   background: #88888850; 
-  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
   
@@ -31,7 +31,7 @@ body{
 #about-me-image {
   animation: slideInFromRight 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
-#projects {
+#projects-section {
   animation: slideInFromLeft 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
 #projects-contact {

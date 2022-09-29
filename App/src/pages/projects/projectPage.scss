@@ -1,0 +1,53 @@
+#project {
+}
+
+#project-tooltip {
+  animation: fadeIn 500ms ease-out forwards;
+  animation-delay: calc(2000ms + var(--animation-order) * 100ms);
+  opacity: 1;
+  display: block!important;
+  visibility: visible!important;
+}
+#project:hover #project-description {
+  opacity: 80%;
+  display: block;
+}
+#project:hover #project-tags {
+  display: none;
+}
+#projects-scroller {
+    animation: expand 500ms ease-out forwards;
+    animation-delay: 70ms;
+  position: relative;
+}
+#projects-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes expand {
+    0%{
+        padding-block: 0rem;
+    }
+    100%{
+        padding-bottom: 2rem;
+        padding-top: 10px;
+    }
+}
