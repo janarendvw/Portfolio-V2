@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Mail, MessageCircle } from "react-feather";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.scss";
 type Props = {};
 
@@ -28,8 +29,9 @@ export default function Navbar({}: Props) {
           <span className={currentPath === "/projects" ? "active" : ""}>
             <Link to={"/projects"}>Projects</Link>
           </span>
-          <Link to={"/contact"} className="btn btn-primary btn-sm">
-            Contact
+          <Link to={"/contact"} className="btn btn-primary btn-sm gap-2">
+            <MessageCircle size={16}/>
+            Let's talk!
           </Link>
         </nav>
       </span>
