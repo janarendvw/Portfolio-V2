@@ -1,5 +1,5 @@
 import React from "react";
-import { Clipboard } from "react-feather";
+import { Clipboard, FileText } from "react-feather";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -21,12 +21,17 @@ export default function AboutMePage({}: Props) {
             projects tab.
           </div>
         </div>
+        <div className="flex flex-row mt-8 gap-4">
         <Link
           to={"/projects"}
-          className="btn btn-primary w-max mt-8 gap-4"
+          className="btn btn-primary w-max gap-4"
         >
           <Clipboard /> Projects
         </Link>
+        <a href="#" className="btn btn-primary btn-outline w-max gap-4">
+          <FileText /> Resume
+        </a>
+      </div>
       </div>
       <div
         id="about-me-image"
