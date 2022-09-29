@@ -62,6 +62,8 @@ export default function ProjectsPage({}: Props) {
   const [numberOfProjectsShown, setNumberOfProjectsShown] = useState(0);
 
   useEffect(() => {
+    
+
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
     }
@@ -93,7 +95,7 @@ export default function ProjectsPage({}: Props) {
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
         </div>
-        <div id="projects-container" className="pt-8 pb-4">
+        <div id="projects-container" className="pt-8">
           <div id="projects-toolbar" className="flex justify-between items-center mb-2">
             <span className="p-0 text-sm">
               <span className="text-secondary font-bold mr-1">
@@ -170,7 +172,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="w-1/4 flex flex-col slide-up">
+      <div id="projects-contact" className="w-1/4 flex flex-col slide-up justify-between">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any

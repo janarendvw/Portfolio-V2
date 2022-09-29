@@ -6,12 +6,12 @@ export default function Timeline({}: Props) {
   useEffect(() => {
     const slider: any = document.querySelector("#projects-scroller");
     const timelineBar: any = document.querySelector("#timeline-thumb");
-    const timelineTrack: any = document.querySelector("#timeline-track");
     let isDown = false;
     let startX: any;
     let scrollLeft: any;
 
     slider?.addEventListener("mousedown", (e: { pageX: number }) => {
+      slider.style.cursor = "grabbing";
       isDown = true;
       slider.classList.add("active");
       startX = e.pageX - slider.offsetLeft;
@@ -22,6 +22,7 @@ export default function Timeline({}: Props) {
       slider.classList.remove("active");
     });
     slider?.addEventListener("mouseup", () => {
+      slider.style.cursor = "grab";
       isDown = false;
       slider.classList.remove("active");
     });
