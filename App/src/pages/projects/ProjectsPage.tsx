@@ -81,7 +81,7 @@ export default function ProjectsPage({}: Props) {
       } else {
         return project.tags.includes(selectedSkill);
       }
-    })
+    });
 
     setFilteredProjectsList(filteredProjects);
     setNumberOfProjectsShown(filteredProjects.length);
@@ -92,30 +92,37 @@ export default function ProjectsPage({}: Props) {
       <div id="projects-section" className="w-2/3">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
-         
         </div>
         <div id="projects-container" className="pt-8 pb-4">
-          <div className="flex justify-between">
-          <span className="p-0 text-sm"><span className="text-secondary font-bold mr-1">{numberOfProjectsShown}</span> {numberOfProjectsShown > 1 ? "projects" : "project"} shown</span>
-          <div
-            id="projects-skill-filter"
-            className="items-center gap-4 flex hover:opacity-100"
-          >
-             <span className="opacity-70">Filtered by skill:</span>
-        <select className="cursor-pointer bg-transparent border-none text-secondary" onChange={(e) => setSelectedSkill(e.target.value)}>
+          <div id="projects-toolbar" className="flex justify-between items-center mb-2">
+            <span className="p-0 text-sm">
+              <span className="text-secondary font-bold mr-1">
+                {numberOfProjectsShown}
+              </span>{" "}
+              {numberOfProjectsShown > 1 ? "projects" : "project"} shown
+            </span>
+            <div
+              id="projects-skill-filter"
+              className="items-center gap-4 flex hover:opacity-100"
+            >
+              <span className="opacity-70">Filtered by skill:</span>
+              <select
+                className="cursor-pointer bg-transparent border-none text-secondary"
+                onChange={(e) => setSelectedSkill(e.target.value)}
+              >
                 {uniqueSkillList.map((skill, index) => {
                   return (
                     <option
-                    key={index}
+                      key={index}
                       className=" bg-base-100 hover:bg-secondary hover:text-base-100 px-2"
                       value={skill}
-                    >{skill}</option>
-  
+                    >
+                      {skill}
+                    </option>
                   );
                 })}
               </select>
-
-          </div>
+            </div>
           </div>
           <div
             id="projects-scroller"
@@ -132,7 +139,7 @@ export default function ProjectsPage({}: Props) {
                       new
                     </span>
                     <Project
-                    selectedSkill={selectedSkill}
+                      selectedSkill={selectedSkill}
                       index={project.id}
                       title={project.title}
                       description={project.description}
@@ -143,15 +150,18 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
-                  <div className="border border-base-100 rounded-box" key={index}>
-                  <Project
-                    selectedSkill={selectedSkill}
-                    index={index}
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                    tags={project.tags}
-                  />
+                  <div
+                    className="border border-base-100 rounded-box"
+                    key={index}
+                  >
+                    <Project
+                      selectedSkill={selectedSkill}
+                      index={index}
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                      tags={project.tags}
+                    />
                   </div>
                 );
               }

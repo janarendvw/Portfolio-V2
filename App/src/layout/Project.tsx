@@ -48,7 +48,7 @@ export default function Project({image, index, title, description, tags, selecte
         </div>
       <span className="flex justify-between px-4 pb-4 items-center">
         <a
-          className="btn btn-sm btn-primary mt-4 w-max flex gap-2"
+          className="btn btn-sm btn-primary mt-4 w-max flex gap-2 text-white"
           href="#"
         >
           <ExternalLink size={16} /> visit
