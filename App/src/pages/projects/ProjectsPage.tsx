@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ChevronDown, Code, ExternalLink } from "react-feather";
+import { bgContext } from "../../App";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
@@ -60,10 +61,10 @@ export default function ProjectsPage({}: Props) {
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
   const [numberOfProjectsShown, setNumberOfProjectsShown] = useState(0);
-
+  const rotation = useContext(bgContext)
+  
   useEffect(() => {
-    
-
+    rotation.setRotation(-2)
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
     }
@@ -153,7 +154,8 @@ export default function ProjectsPage({}: Props) {
               } else {
                 return (
                   <div
-                    className="border border-base-100 rounded-box"
+                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
+                    className="border border-white/0 rounded-box"
                     key={index}
                   >
                     <Project

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { User } from "react-feather";
 import { Link } from "react-router-dom";
+import { bgContext } from "../../App";
 
 type Props = {};
 
 export default function HomePage({}: Props) {
+  const rotation = useContext(bgContext)
+  useEffect(() => {
+    if(rotation !== null) {
+    rotation?.setRotation(1)
+    }
+  }, [bgContext])
   return (
     <div className="flex justify-between col-start-2 col-span-10 row-start-2">
       <div id="home-hero-left" className="w-1/3 slide-left">

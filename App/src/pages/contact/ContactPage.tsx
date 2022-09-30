@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { bgContext } from '../../App'
 import ContactForm from './ContactForm'
 
 type Props = {}
 
 export default function ContactPage({}: Props) {
+  const rotation = useContext(bgContext)
+  useEffect(() => {
+    rotation.setRotation(-3)
+  }, [])
   return (
     <div className='flex justify-between col-start-2 col-span-10 row-start-2'>
       <div id="contact-hero-left" className="w-1/3 slide-left">
