@@ -15,23 +15,8 @@ import { OrbitControls } from "@react-three/drei";
 function App() {
   const texture = useLoader(TextureLoader, "/images/circle1.png");
   return (
-<<<<<<< HEAD
-    <div className="grid grid-cols-12 gap-4 w-full h-screen auto-rows-min content-between">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="*" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/about-me" element={<AboutMePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
-=======
     <>
-      <div className="grid grid-cols-12 gap-4 w-full h-screen auto-rows-auto">
+      <div className="grid grid-cols-12 gap-4 w-full h-screen auto-rows-min content-between">
         <BrowserRouter>
           <Navbar />
           <Routes>
@@ -50,10 +35,10 @@ function App() {
       >
         <Canvas
           performance={{ min: 0.5 }}
-          style={{ width: "100vw", height: "100vh", zIndex: "-1" }}
+          style={{ width: "100vw", height: "100vh", zIndex: "-1", opacity: "0.5" }}
         >
           <fog attach="fog" args={["#000000", 0, 10]} />
-          <OrbitControls autoRotate={true} autoRotateSpeed={0.1} />
+          <OrbitControls autoRotate={true} autoRotateSpeed={0.3} />
           <pointLight position={[4, 10, -2]} color={"blue"} intensity={5} />
           <pointLight
             position={[0, -10, -6]}
@@ -62,12 +47,11 @@ function App() {
           />
           <mesh>
             <torusKnotGeometry args={[10,3]} />
-            <meshPhongMaterial wireframe refractionRatio={1} shininess={100} reflectivity={1} />
+            <meshPhongMaterial wireframe />
           </mesh>
         </Canvas>
       </div>
     </>
->>>>>>> THREE
   );
 }
 
