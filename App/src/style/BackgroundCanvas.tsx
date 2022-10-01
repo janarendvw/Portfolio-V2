@@ -20,9 +20,11 @@ export default function BackgroundCanvas({}: Props) {
     performance={{ min: 0.5 }}
       style={{ width: "100vw", height: "100vh", zIndex: "-1"}}
     >
+        {/* @ts-ignore */}
         <PerformanceMonitor onChange={({ factor }) => setDpr(Math.round(0.5 + 1.5 * factor, 1))}/>
       <EffectComposer multisampling={0} disableNormalPass={true}>
         <Noise opacity={0.1}/>
+        {/* @ts-ignore */}
         <ChromaticAberration offset={[0.011, 0.021]} />
 
       </EffectComposer>
