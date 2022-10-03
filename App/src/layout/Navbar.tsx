@@ -15,11 +15,11 @@ export default function Navbar({}: Props) {
   return (
     <div
       id="navbar"
-      className="flex col-start-2 col-span-10 justify-between mt-8 items-center h-min"
+      className="flex col-start-2 col-span-10 justify-between mt-8 items-center h-min w-full"
     >
-      <div className="font-bold text-3xl">STCKD</div>
-      <span className="flex flex-col">
-        <nav id="nav-links" className="flex gap-10 items-center">
+      <div className="md:block hidden font-bold text-3xl">STCKD</div>
+      <span className="flex md:flex-col md:w-auto w-full">
+        <nav id="nav-links" className="flex gap-10 items-center w-full justify-evenly">
           <span className={currentPath === "/" || currentPath === "/home" ? "active" : ""}>
             <Link to={"/home"}>Home</Link>
           </span>

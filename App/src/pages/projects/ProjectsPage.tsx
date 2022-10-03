@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ChevronDown, Code, ExternalLink } from "react-feather";
+import { bgContext } from "../../App";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
 import ContactForm from "../contact/ContactForm";
@@ -60,8 +61,10 @@ export default function ProjectsPage({}: Props) {
   const [uniqueSkillList, setUniqueSkillList] = useState([]);
   const [filteredProjectsList, setFilteredProjectsList] = useState<any>([]);
   const [numberOfProjectsShown, setNumberOfProjectsShown] = useState(0);
-
+  const rotation = useContext(bgContext)
+  
   useEffect(() => {
+    rotation.setRotation(-2)
     function onlyUnique(value: any, index: number, self: any) {
       return self.indexOf(value) === index;
     }
@@ -81,7 +84,7 @@ export default function ProjectsPage({}: Props) {
       } else {
         return project.tags.includes(selectedSkill);
       }
-    })
+    });
 
     setFilteredProjectsList(filteredProjects);
     setNumberOfProjectsShown(filteredProjects.length);
@@ -89,47 +92,40 @@ export default function ProjectsPage({}: Props) {
 
   return (
     <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
-      <div id="projects-section" className="w-2/3">
+      <div id="projects-section" className="w-2/3 slide-left">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
-         
         </div>
-        <div id="projects-container" className="pt-8 pb-4">
-          <div className="flex justify-between">
-          <span className="p-0 text-sm"><span className="text-secondary font-bold mr-1">{numberOfProjectsShown}</span> {numberOfProjectsShown > 1 ? "projects" : "project"} shown</span>
-          <div
-            id="projects-skill-filter"
-            className="items-center gap-4 flex hover:opacity-100"
-          >
-             <span className="opacity-70">Filtered by skill:</span>
-            <div className="dropdown dropdown-right">
-             
-              <label
-                tabIndex={0}
-                className="font-bold ml-5 inline-flex gap-2 cursor-pointer text-secondary"
-              >
-                {selectedSkill} <ChevronDown />
-              </label>
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu border border-secondary bg-base-100 rounded-box w-52"
+        <div id="projects-container" className="pt-8">
+          <div id="projects-toolbar" className="flex justify-between items-center mb-2">
+            <span className="p-0 text-sm">
+              <span className="text-secondary font-bold mr-1">
+                {numberOfProjectsShown}
+              </span>{" "}
+              {numberOfProjectsShown > 1 ? "projects" : "project"} shown
+            </span>
+            <div
+              id="projects-skill-filter"
+              className="items-center gap-4 flex hover:opacity-100"
+            >
+              <span className="opacity-70">Filtered by skill:</span>
+              <select
+                className="cursor-pointer bg-transparent border-none text-secondary"
+                onChange={(e) => setSelectedSkill(e.target.value)}
               >
                 {uniqueSkillList.map((skill, index) => {
                   return (
-                    <span
-                    key={index}
-                      className="cursor-pointer hover:bg-secondary hover:text-base-100 px-2"
-                      onClick={() => {
-                        setSelectedSkill(skill);
-                      }}
+                    <option
+                      key={index}
+                      className=" bg-base-100 hover:bg-secondary hover:text-base-100 px-2"
+                      value={skill}
                     >
-                      {skill === selectedSkill ? <span className="text-secondary font-bold">{skill}</span> : skill}
-                    </span>
+                      {skill}
+                    </option>
                   );
                 })}
-              </ul>
+              </select>
             </div>
-          </div>
           </div>
           <div
             id="projects-scroller"
@@ -146,7 +142,7 @@ export default function ProjectsPage({}: Props) {
                       new
                     </span>
                     <Project
-                    selectedSkill={selectedSkill}
+                      selectedSkill={selectedSkill}
                       index={project.id}
                       title={project.title}
                       description={project.description}
@@ -157,15 +153,19 @@ export default function ProjectsPage({}: Props) {
                 );
               } else {
                 return (
-                  <div className="border border-base-100 rounded-box" key={index}>
-                  <Project
-                    selectedSkill={selectedSkill}
-                    index={index}
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                    tags={project.tags}
-                  />
+                  <div
+                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
+                    className="border border-white/0 rounded-box"
+                    key={index}
+                  >
+                    <Project
+                      selectedSkill={selectedSkill}
+                      index={index}
+                      title={project.title}
+                      description={project.description}
+                      image={project.image}
+                      tags={project.tags}
+                    />
                   </div>
                 );
               }
@@ -174,7 +174,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="w-1/4 flex flex-col">
+      <div id="projects-contact" className="w-1/4 flex flex-col slide-up justify-between">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any
