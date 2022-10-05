@@ -42,7 +42,7 @@ const projects = [
       "this text contains 50 words: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nunc nisl eget nunc.",
     image: "https://picsum.photos/800/600",
     date: "2021-01-04",
-    tags: ["React", "Typescript", "Tailwind", "CSS", "Nuxt"],
+    tags: ["React", "Typescript", "Tailwind", "Nuxt"],
   },
   {
     id: 5,
@@ -135,8 +135,9 @@ export default function ProjectsPage({}: Props) {
               if (project.id === 1) {
                 return (
                   <div
+                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     key={index}
-                    className="indicator border border-primary rounded-box"
+                    className="w-96 indicator rounded-box"
                   >
                     <span className="indicator-item badge badge-primary ">
                       new
@@ -155,7 +156,7 @@ export default function ProjectsPage({}: Props) {
                 return (
                   <div
                   style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
-                    className="border border-white/0 rounded-box"
+                    className="w-fit rounded-box"
                     key={index}
                   >
                     <Project
