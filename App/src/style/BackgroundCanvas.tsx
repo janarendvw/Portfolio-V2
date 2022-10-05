@@ -18,7 +18,7 @@ export default function BackgroundCanvas({}: Props) {
   >
     <Canvas camera={{ position: [0, 0, 1], fov: 50, rotation: [0, 0, 0] }}
     performance={{ min: 0.5 }}
-      style={{ width: "100vw", height: "100vh", zIndex: "-1", opacity: "0.3" }}
+      style={{ width: "100vw", height: "100vh", zIndex: "-1", opacity: "0.4" }}
     >
         {/* @ts-ignore */}
         <PerformanceMonitor onChange={({ factor }) => setDpr(Math.round(0.5 + 1.5 * factor, 1))}/>
