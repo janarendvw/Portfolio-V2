@@ -13,8 +13,8 @@ export default function AboutMePage({}: Props) {
     }
   }, [bgContext]);
   return (
-    <div className="flex justify-between items-between col-start-2 col-span-10 row-start-2">
-      <div id="about-me-text" className="w-1/3 flex flex-col slide-up">
+    <div className="flex flex-col-reverse gap-32 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
+      <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-up">
         <div>
           <div className="text-4xl font-bold">About Me</div>
           <div id="about-me-text-p" className="text-xl opacity-80 mt-4">
@@ -37,7 +37,7 @@ export default function AboutMePage({}: Props) {
           </a>
         </div>
       </div>
-      <div id="about-me-image" className="w-1/4 flex h-full slide-right">
+      <div id="about-me-image" className="w-1/2 lg:w-1/4 flex h-full slide-right">
         <img src="/images/about-me.svg" alt="about me" />
       </div>
     </div>
