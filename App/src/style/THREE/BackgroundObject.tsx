@@ -19,19 +19,17 @@ export default function BackgroundObject({}: Props) {
 
   return (
     <>
-      <OrbitControls attach={"camera"} />
       {/* <fog attach="fog" args={["#000000", 6, 10]} /> */}
       {/* <ambientLight intensity={0.5} /> */}
-      <pointLight position={[4, 10, -2]} color={"blue"} intensity={5} />
-      <pointLight position={[0, -10, -6]} color={"red"} intensity={3} />
-      <pointLight position={[-5, 7, -9]} color={"blue"} intensity={2} />
+      <pointLight position={[4, 10, -2]} color={"aqua"} intensity={5} />
+      <pointLight position={[0, -10, -6]} color={"cyan"} intensity={3} />
       <animated.mesh 
         rotation-z={rotate1}
         rotation-x={rotate2}
         rotation-y={rotate1}
       >
-        <torusKnotGeometry args={[10, 3]} />
-        <meshPhongMaterial shininess={100} color={'white'} reflectivity={1} refractionRatio={0.78}/>
+        <torusKnotGeometry args={[3, 1]} />
+        <meshBasicMaterial wireframe/>
         {/* <meshPhysicalMaterial color={"white"} roughness={0.1} metalness={0.3} reflectivity={1} clearcoat={1} vertexColors /> */}
       </animated.mesh>
     </>
