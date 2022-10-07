@@ -27,7 +27,7 @@ export default function HomePage({}: Props) {
           I am a 22 year old full stack developer from the Netherlands with a
           key interest in visual design and data science.
         </div>
-        <Link to={"/about-me"} className="btn btn-primary mt-8 gap-4"><User/>About me</Link>
+        <Link to={"/about-me"} className="btn btn-primary mt-8 gap-4 text-white"><User/>About me</Link>
       </div>
      
     </div>

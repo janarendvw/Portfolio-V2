@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Mail, MessageCircle } from "react-feather";
+import { MessageCircle } from "react-feather";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.scss";
 type Props = {};
@@ -7,6 +7,7 @@ type Props = {};
 export default function Navbar({}: Props) {
   const location = useLocation();
   const [currentPath, setCurrentPath] = useState("");
+  let activeClass = 'before:content-[\'\'] before:absolute before:rounded-box before:-top-1/2 before:left-0 before:w-full before:h-1 before:bg-secondary';
 
   useEffect(() => {
     setCurrentPath(location.pathname);
@@ -28,7 +29,7 @@ export default function Navbar({}: Props) {
           <Link
             className={
               currentPath === "/" || currentPath === "/home"
-                ? "active focus-visible:outline rounded-box"
+                ? `${activeClass} focus-visible:outline rounded-box`
                 : "focus-visible:outline rounded-box"
             }
             to={"/home"}
@@ -38,7 +39,7 @@ export default function Navbar({}: Props) {
           <Link
             className={
               currentPath === "/about-me"
-                ? "active focus-visible:outline rounded-box"
+                ? `${activeClass} focus-visible:outline rounded-box`
                 : "focus-visible:outline rounded-box"
             }
             to={"/about-me"}
@@ -48,14 +49,14 @@ export default function Navbar({}: Props) {
           <Link
             className={
               currentPath === "/projects"
-                ? "active focus-visible:outline rounded-box"
+                ? `${activeClass} focus-visible:outline rounded-box`
                 : "focus-visible:outline rounded-box"
             }
             to={"/projects"}
           >
             Projects
           </Link>
-          <Link to={"/contact"} className="btn btn-primary btn-sm gap-2">
+          <Link to={"/contact"} className="btn btn-primary text-white btn-sm gap-2">
             <MessageCircle size={16} />
             Let's talk!
           </Link>

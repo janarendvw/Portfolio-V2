@@ -23,7 +23,7 @@ export default function ContactForm({}: Props) {
           className="textarea bg-gray h-24 border border-1 border-gray-300/50"
           placeholder="Enter your message"
         ></textarea>
-        <button className="btn btn-primary mt-8">Send message</button>
+        <button className="btn btn-primary text-white mt-8">Send message</button>
       </div>
     </>
   );

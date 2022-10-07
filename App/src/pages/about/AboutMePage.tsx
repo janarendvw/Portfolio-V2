@@ -29,10 +29,10 @@ export default function AboutMePage({}: Props) {
           </div>
         </div>
         <div className="flex flex-row mt-8 gap-4">
-          <Link to={"/projects"} className="btn btn-primary w-max gap-4">
+          <Link to={"/projects"} className="btn btn-primary text-white w-max gap-4">
             <Clipboard /> Projects
           </Link>
-          <a href="#" className="btn btn-primary btn-outline w-max gap-4">
+          <a href="#" className="btn btn-secondary btn-outline w-max gap-4">
             <FileText /> Resume
           </a>
         </div>
