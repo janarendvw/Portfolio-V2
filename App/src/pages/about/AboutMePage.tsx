@@ -33,7 +33,7 @@ export default function AboutMePage({}: Props) {
             <Clipboard /> Projects
           </Link>
           <a href="#" className="btn btn-secondary btn-outline w-max gap-4">
-            <FileText /> Resume
+            <FileText /> Resumé
           </a>
         </div>
       </div>

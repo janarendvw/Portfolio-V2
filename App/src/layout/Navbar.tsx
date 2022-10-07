@@ -19,7 +19,7 @@ export default function Navbar({}: Props) {
       className="flex col-start-2 col-span-10 justify-between mt-8 items-center h-min w-full"
     >
       <Link className="md:block hidden font-bold text-3xl focus-visible:outline rounded-box" to={"/home"}>
-        STCKD
+        Jan van Winsen
       </Link>
       <span className="flex md:flex-col md:w-auto w-full">
         <nav

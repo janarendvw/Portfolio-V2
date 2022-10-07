@@ -41,7 +41,7 @@ export default function Project({
           </div>
           <div
             id="project-description"
-            className="text-md opacity-0 hidden mt-4 flex"
+            className="text-md opacity-0 hidden mt-4 hover:flex"
           >
             {description}
           </div>
@@ -49,12 +49,15 @@ export default function Project({
         <span>
           <span className="flex justify-between px-4 pb-4 items-center">
             <a
+            aria-label={`View ${title}`}	
               className="btn btn-sm btn-primary mt-4 w-max flex gap-2 text-white"
               href="#"
             >
               <ExternalLink size={16} /> visit
             </a>
             <a
+            aria-
+            aria-label={`View the source-code of ${title} on GitHub`}	
               className="btn btn-sm border-white text-white btn-outline bg-black/50 mt-4 w-max flex gap-2"
               href="#"
             >

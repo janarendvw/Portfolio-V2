@@ -110,6 +110,7 @@ export default function ProjectsPage({}: Props) {
             >
               <span className="opacity-70">Filtered by skill:</span>
               <select
+              aria-label="Filter projects by skill"
                 className="focus-visible:outline rounded-box cursor-pointer bg-transparent border-none text-secondary"
                 onChange={(e) => setSelectedSkill(e.target.value)}
               >
@@ -138,6 +139,7 @@ export default function ProjectsPage({}: Props) {
                   style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     key={index}
                     className="w-96 indicator rounded-box"
+                    aria-label="Most recent project"
                   >
                     <span className="indicator-item badge badge-primary ">
                       new
