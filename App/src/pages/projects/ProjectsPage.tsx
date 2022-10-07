@@ -110,7 +110,7 @@ export default function ProjectsPage({}: Props) {
             >
               <span className="opacity-70">Filtered by skill:</span>
               <select
-                className="cursor-pointer bg-transparent border-none text-secondary"
+                className="focus-visible:outline rounded-box cursor-pointer bg-transparent border-none text-secondary"
                 onChange={(e) => setSelectedSkill(e.target.value)}
               >
                 {uniqueSkillList.map((skill, index) => {
