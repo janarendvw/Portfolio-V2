@@ -136,12 +136,11 @@ export default function ProjectsPage({}: Props) {
               if (project.id === 1) {
                 return (
                   <div
-                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     key={index}
                     className="w-96 indicator rounded-box"
                     aria-label="Most recent project"
                   >
-                    <span className="indicator-item badge badge-primary shadow shadow-sm">
+                    <span className="indicator-item badge badge-primary">
                       new
                     </span>
                     <Project
@@ -157,7 +156,6 @@ export default function ProjectsPage({}: Props) {
               } else {
                 return (
                   <div
-                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     className="w-fit rounded-box"
                     key={index}
                   >

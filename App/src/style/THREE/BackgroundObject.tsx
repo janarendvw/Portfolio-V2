@@ -21,16 +21,15 @@ export default function BackgroundObject({}: Props) {
     <>
       {/* <fog attach="fog" args={["#000000", 6, 10]} /> */}
       {/* <ambientLight intensity={0.5} /> */}
-      <pointLight position={[4, 10, -2]} color={"aqua"} intensity={5} />
-      <pointLight position={[0, -10, -6]} color={"cyan"} intensity={3} />
+      <pointLight position={[4, 10, -2]} color={"white"} intensity={2} />
+      <pointLight position={[0, -10, -6]} color={"white"} intensity={2} />
       <animated.mesh 
         rotation-z={rotate1}
         rotation-x={rotate2}
         rotation-y={rotate1}
       >
         <torusKnotGeometry args={[3, 1]} />
-        <meshBasicMaterial wireframe/>
-        {/* <meshPhysicalMaterial color={"white"} roughness={0.1} metalness={0.3} reflectivity={1} clearcoat={1} vertexColors /> */}
+        <meshPhysicalMaterial color={'#000'} metalness={1} roughness={0.1} reflectivity={1} />
       </animated.mesh>
     </>
   );
