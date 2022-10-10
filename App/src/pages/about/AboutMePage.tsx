@@ -13,7 +13,7 @@ export default function AboutMePage({}: Props) {
     }
   }, [bgContext]);
   return (
-    <div className="flex flex-col-reverse gap-32 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
+    <div id="main-content" className="flex flex-col-reverse gap-32 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
       <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-up">
         <div>
           <div className="text-4xl font-bold">About Me</div>
@@ -29,11 +29,11 @@ export default function AboutMePage({}: Props) {
           </div>
         </div>
         <div className="flex flex-row mt-8 gap-4">
-          <Link to={"/projects"} className="btn btn-primary w-max gap-4">
+          <Link to={"/projects"} className="btn btn-primary text-white w-max gap-4">
             <Clipboard /> Projects
           </Link>
-          <a href="#" className="btn btn-primary btn-outline w-max gap-4">
-            <FileText /> Resume
+          <a href="#" className="btn btn-secondary btn-outline w-max gap-4">
+            <FileText /> Resumé
           </a>
         </div>
       </div>

@@ -19,7 +19,7 @@ export default function Project({
   selectedSkill,
 }: Props) {
   return (
-    <div
+    <main
       style={
         {
           background: `url(${image})`,
@@ -41,13 +41,31 @@ export default function Project({
           </div>
           <div
             id="project-description"
-            className="text-md opacity-0 hidden mt-4 flex"
+            className="text-md opacity-0 hidden mt-4 hover:flex"
           >
             {description}
           </div>
         </div>
-        <div>
-        <div
+        <span>
+          <span className="flex justify-between px-4 pb-4 items-center">
+            <a
+            aria-label={`View ${title}`}	
+              className="btn btn-sm btn-primary mt-4 w-max flex gap-2 text-white"
+              href="#"
+            >
+              <ExternalLink size={16} /> visit
+            </a>
+            <a
+            aria-
+            aria-label={`View the source-code of ${title} on GitHub`}	
+              className="btn btn-sm border-white text-white btn-outline bg-black/50 mt-4 w-max flex gap-2"
+              href="#"
+            >
+              <Code size={16} />
+              code
+            </a>
+          </span>
+          <div
             id="project-tags"
             className="flex relative h-10 w-full justify-center items-center bg-base-100/50 overflow-x-auto overflow-y-hidden duration-400"
           >
@@ -96,8 +114,8 @@ export default function Project({
           </span>
          
         </span>
-        </div>
+        
       </div>
-    </div>
+    </main>
   );
 }

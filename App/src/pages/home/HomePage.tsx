@@ -13,7 +13,7 @@ export default function HomePage({}: Props) {
     }
   }, [bgContext])
   return (
-    <div className="flex flex-col md:flex-row justify-between col-start-2 col-span-10 row-start-2">
+    <main id="main-content" className="flex flex-col md:flex-row justify-between col-start-2 col-span-10 row-start-2">
       <div id="home-hero-left" className="w-full md:w-1/3 slide-left">
         <div className="text-6xl">YOU MADE IT!</div>
         <div className="text-xl opacity-80 mt-4">
@@ -27,9 +27,9 @@ export default function HomePage({}: Props) {
           I am a 22 year old full stack developer from the Netherlands with a
           key interest in visual design and data science.
         </div>
-        <Link to={"/about-me"} className="btn btn-primary mt-8 gap-4"><User/>About me</Link>
+        <Link to={"/about-me"} className="btn btn-primary mt-8 gap-4 text-white"><User/>About me</Link>
       </div>
      
-    </div>
+    </main>
   );
 }
