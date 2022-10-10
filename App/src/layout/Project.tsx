@@ -19,7 +19,7 @@ export default function Project({
   selectedSkill,
 }: Props) {
   return (
-    <div
+    <main
       style={
         {
           background: `url(${image})`,
@@ -94,6 +94,6 @@ export default function Project({
           </div>
         </span>
       </div>
-    </div>
+    </main>
   );
 }

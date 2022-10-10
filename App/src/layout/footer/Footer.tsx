@@ -9,7 +9,7 @@ export default function Footer({}: Props) {
     themeChange(false);
   }, []);
   return (
-    <div className="col-start-0 col-span-12 row-start-3 self-end p-4 flex justify-between">
+    <footer className="col-start-0 col-span-12 row-start-3 self-end p-4 flex justify-between">
       <Socials />
       <span className="flex gap-4 items-center"> Theme: 
       <select aria-label="theme select" data-choose-theme className="bg-base-100 cursor-pointer focus-visible:outline rounded-box">
@@ -17,6 +17,6 @@ export default function Footer({}: Props) {
   <option value="myLight">Light</option>
 </select>
 </span>
-    </div>
+    </footer>
   );
 }

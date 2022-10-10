@@ -91,7 +91,7 @@ export default function ProjectsPage({}: Props) {
   }, [selectedSkill]);
 
   return (
-    <div id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
+    <main id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-2/3 slide-left">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
@@ -185,6 +185,6 @@ export default function ProjectsPage({}: Props) {
         </div>
         <ContactForm />
       </div>
-    </div>
+    </main>
   );
 }
