@@ -129,7 +129,7 @@ export default function ProjectsPage({}: Props) {
           </div>
           <div
             id="projects-scroller"
-            className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
+            className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 px-4"
           >
             {filteredProjectsList.map((project: any, index: number) => {
               if (project.id === 1) {
@@ -139,7 +139,7 @@ export default function ProjectsPage({}: Props) {
                     key={index}
                     className="w-96 indicator rounded-box"
                   >
-                    <span className="indicator-item badge badge-primary ">
+                    <span className="indicator-item badge badge-primary shadow shadow-sm">
                       new
                     </span>
                     <Project
