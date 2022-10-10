@@ -37,7 +37,7 @@ export default function AboutMePage({}: Props) {
           </a>
         </div>
       </div>
-      <div id="about-me-image" className="w-1/2 lg:w-1/4 flex h-full slide-right">
+      <div id="about-me-image" className="lg:pt-0 pt-24 w-1/2 lg:w-1/4 flex h-full slide-right">
         <img src="/images/about-me.svg" alt="about me" />
       </div>
     </div>
