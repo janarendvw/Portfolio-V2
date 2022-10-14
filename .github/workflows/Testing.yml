@@ -30,7 +30,7 @@ jobs:
 
       # Finally, run our tests
       - name: Run the tests
-        run:  npm --prefix App test app
+        run:  npm --prefix App coverage app
 
   test-coverage:
     runs-on: ubuntu-latest
