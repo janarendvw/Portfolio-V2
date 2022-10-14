@@ -16,27 +16,16 @@ body{
   
   background: #555; 
 } 
-
-#home-hero-left {
+.slide-left{
   animation: slideInFromLeft 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
-
-#home-hero-right {
-  animation: slideInFromBottom 1s cubic-bezier(0, 0.95, 0.11, 1);
-}
-
-#about-me-text {
-  animation: slideInFromBottom 1s cubic-bezier(0, 0.95, 0.11, 1);
-}
-#about-me-image {
+.slide-right{
   animation: slideInFromRight 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
-#projects-section {
-  animation: slideInFromLeft 1s cubic-bezier(0, 0.95, 0.11, 1);
-}
-#projects-contact {
+.slide-up{
   animation: slideInFromBottom 1s cubic-bezier(0, 0.95, 0.11, 1);
 }
+
 @keyframes slideInFromLeft {
   0% {
     opacity: 0;
