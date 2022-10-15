@@ -30,7 +30,7 @@ useEffect(() => {
   const rotationContext = useContext(bgContext);
   const { rotate1 } = useSpring({
     rotate1: (rotationContext.rotation) * -10 ,
-    config: {tension:4, friction: 5},
+    config: {tension:8, friction: 8},
   });
   const { rotate2 } = useSpring({
     rotate2: rotationContext.rotation / 3,
