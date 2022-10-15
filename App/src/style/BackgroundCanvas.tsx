@@ -7,6 +7,7 @@ import { ChromaticAberration } from '@react-three/postprocessing'
 import { Noise } from '@react-three/postprocessing'
 import { GodRays } from '@react-three/postprocessing'
 import { Vector2 } from 'three'
+import { Columns } from 'react-feather'
 type Props = {}
 
 export default function BackgroundCanvas({}: Props) {
