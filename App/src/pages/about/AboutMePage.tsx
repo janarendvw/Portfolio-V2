@@ -19,7 +19,7 @@ export default function AboutMePage({}: Props) {
   }, []);
   return (
     <main id="main-content" className="flex flex-col-reverse gap-8 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
-      <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-up">
+      <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-left">
         <div>
           <div className="text-4xl font-bold">About Me</div>
           <div id="about-me-text-p" className="text-xl opacity-80 mt-4">

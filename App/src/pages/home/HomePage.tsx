@@ -23,7 +23,7 @@ export default function HomePage({}: Props) {
           a while.
         </div>
       </div>
-      <div id="home-hero-right" className="w-full mt-24 md:mt-auto md:w-96 slide-up">
+      <div id="home-hero-right" className="w-full mt-24 md:mt-auto md:w-96 slide-right">
         <div className="text-2xl font-bold">Hi! My name is Jan.</div>
         <div className="text-xl opacity-80 mt-4">
           I am a 22 year old full stack developer from the Netherlands with a

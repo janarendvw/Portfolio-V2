@@ -13,6 +13,7 @@ export const bgContext = createContext<any>(1);
 
 function App() {
   const [rotation, setRotation] = useState(1);
+  
   return (
     <>
 <bgContext.Provider value={{ rotation, setRotation }}>

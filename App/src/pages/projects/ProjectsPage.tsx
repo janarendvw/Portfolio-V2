@@ -89,7 +89,7 @@ export default function ProjectsPage({}: Props) {
     setNumberOfProjectsShown(filteredProjects.length);
   }, [selectedSkill]);
 
-  const audio = new Audio("/audio/projects_chord.flac");
+  const audio = new Audio("/audio/about_chord.flac");
   useEffect(() => {
     audio.play();
   }, []);
@@ -141,7 +141,7 @@ export default function ProjectsPage({}: Props) {
                 return (
                   <div
                     key={index}
-                    className="w-96 indicator rounded-box"
+                    className="w-full md:w-fit indicator rounded-box"
                     aria-label="Most recent project"
                   >
                     <span className="indicator-item badge badge-primary">
@@ -160,7 +160,7 @@ export default function ProjectsPage({}: Props) {
               } else {
                 return (
                   <div
-                    className="w-fit rounded-box"
+                    className="w-full md:w-fit rounded-box"
                     key={index}
                   >
                     <Project
@@ -179,7 +179,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="hidden w-full md:w-1/4 md:flex flex-col slide-up justify-between ">
+      <div id="projects-contact" className="hidden w-full md:w-1/4 md:flex flex-col slide-right justify-between ">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any

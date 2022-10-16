@@ -11,6 +11,13 @@ export default function Navbar({}: Props) {
 
   useEffect(() => {
     setCurrentPath(location.pathname);
+   return () => {
+    let navBar = document.getElementById('navbar');
+    navBar?.classList.add('moveUpDown');
+    setTimeout(() => {
+    navBar?.classList.remove('moveUpDown');
+    }, 3700);
+    }
   }, [location]);
 
   return (

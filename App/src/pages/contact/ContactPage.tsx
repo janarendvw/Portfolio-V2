@@ -9,7 +9,7 @@ export default function ContactPage({}: Props) {
   useEffect(() => {
     rotation.setRotation(-3)
   }, [])
-  const audio = new Audio("/audio/about_chord.flac");
+  const audio = new Audio("/audio/projects_chord.flac");
   useEffect(() => {
     audio.play();
   }, []);
@@ -21,7 +21,7 @@ export default function ContactPage({}: Props) {
           I am always open to new opportunities and collaborations. Feel free to contact me via email or LinkedIn.
           </div>
           </div>
-          <div id="contact-hero-right" className="w-full md:w-96 slide-up">
+          <div id="contact-hero-right" className="w-full md:w-96 slide-right">
             <ContactForm/>
             </div>
     </main>

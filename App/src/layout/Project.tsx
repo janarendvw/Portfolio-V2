@@ -29,7 +29,7 @@ export default function Project({
         } as React.CSSProperties
       }
       id="project"
-      className="snap-center h-96 w-96 text-secondary flex flex-col justify-between overflow-hidden duration-100 card"
+      className="snap-center h-96 w-full md:w-96 text-secondary flex flex-col justify-between overflow-hidden duration-100 card"
     >
       <div className="bg-base-100/30 hover:bg-base-100/90 duration-200 h-full flex flex-col justify-between">
         <div id="project-text" className="p-4">

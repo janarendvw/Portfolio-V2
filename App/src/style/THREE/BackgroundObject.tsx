@@ -39,15 +39,13 @@ useEffect(() => {
 
   return (
     <>
-      {/* <fog attach="fog" args={["#000000", 6, 10]} /> */}
+      <fog attach="fog" args={["#000000", 12, 17]} />
       {/* <ambientLight intensity={0.5} /> */}
-      <pointLight position={[4, 10, -2]} color={"white"} intensity={2} />
-      <pointLight position={[0, -10, -6]} color={"white"} intensity={2} />
       <animated.points 
         position-z={rotate1}
       >  
       <bufferGeometry attach="geometry" ref={geometryRef}/>
-      <pointsMaterial size={0.02} sizeAttenuation color={'#fff'} transparent/>
+      <pointsMaterial size={0.01} sizeAttenuation color={'#fff'} transparent/>
       </animated.points>
       {/* <animated.mesh 
         position-z={rotate1}
