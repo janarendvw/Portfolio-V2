@@ -10,6 +10,10 @@ export default function HomePage({}: Props) {
     rotation.setRotation(1)
     
   }, [bgContext])
+  const audio = new Audio("/audio/home_chord.flac");
+  useEffect(() => {
+    audio.play();
+  }, []);
   return (
     <main id="main-content" className="flex flex-col md:flex-row justify-between col-start-2 col-span-10 row-start-2">
       <div id="home-hero-left" className="w-full md:w-1/3 slide-left">
