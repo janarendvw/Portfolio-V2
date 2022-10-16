@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import ReactAudioPlayer from "react-audio-player";
 import { ChevronDown, Code, ExternalLink } from "react-feather";
 import { bgContext } from "../../App";
 import Project from "../../layout/Project";
@@ -91,7 +92,7 @@ export default function ProjectsPage({}: Props) {
   }, [selectedSkill]);
 
   return (
-    <div className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
+    <main id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-2/3 slide-left">
         <div className="flex flex-col lg:flex-row md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
@@ -110,7 +111,8 @@ export default function ProjectsPage({}: Props) {
             >
               <span className="opacity-70">Filtered by skill:</span>
               <select
-                className="cursor-pointer bg-transparent border-none text-secondary"
+              aria-label="Filter projects by skill"
+                className="focus-visible:outline rounded-box cursor-pointer bg-transparent border-none text-secondary"
                 onChange={(e) => setSelectedSkill(e.target.value)}
               >
                 {uniqueSkillList.map((skill, index) => {
@@ -129,17 +131,17 @@ export default function ProjectsPage({}: Props) {
           </div>
           <div
             id="projects-scroller"
-            className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10"
+            className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 px-4"
           >
             {filteredProjectsList.map((project: any, index: number) => {
               if (project.id === 1) {
                 return (
                   <div
-                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     key={index}
                     className="w-96 indicator rounded-box"
+                    aria-label="Most recent project"
                   >
-                    <span className="indicator-item badge badge-primary ">
+                    <span className="indicator-item badge badge-primary">
                       new
                     </span>
                     <Project
@@ -155,7 +157,6 @@ export default function ProjectsPage({}: Props) {
               } else {
                 return (
                   <div
-                  style={{boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.3)"}}
                     className="w-fit rounded-box"
                     key={index}
                   >
@@ -183,6 +184,10 @@ export default function ProjectsPage({}: Props) {
         </div>
         <ContactForm />
       </div>
-    </div>
+      <ReactAudioPlayer
+     src="/audio/projects_chord.flac"
+     autoPlay
+     />
+    </main>
   );
 }

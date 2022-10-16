@@ -12,11 +12,12 @@ module.exports = {
     themes: [
       {
         myDark: {
-          primary: "#3366ff",
-          secondary: "#F9FAFB",
+          primary: "#1326ff",
+          secondary: "#FFF",
           accent: "#37cdbe",
           neutral: "#3d4451",
           "base-100": "#070707",
+          "base-content": "#fff",
 
           "--rounded-box": "5px", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "5px", // border radius rounded-btn utility class, used in buttons and similar element
@@ -30,7 +31,7 @@ module.exports = {
           "--tab-radius": "0.5rem", // border radius of tabs
         },
         myLight: {
-          primary: "#3366ff",
+          primary: "#1326ff",
           secondary: "#070707",
           accent: "#37cdbe",
           neutral: "#3d4451",

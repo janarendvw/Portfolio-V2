@@ -19,7 +19,7 @@ export default function Project({
   selectedSkill,
 }: Props) {
   return (
-    <div
+    <main
       style={
         {
           background: `url(${image})`,
@@ -29,9 +29,9 @@ export default function Project({
         } as React.CSSProperties
       }
       id="project"
-      className="snap-center h-96 w-96 text-white flex flex-col justify-between overflow-hidden duration-100 card"
+      className="snap-center h-96 w-96 text-secondary flex flex-col justify-between overflow-hidden duration-100 card"
     >
-      <div className="bg-black/10 hover:bg-black/90 duration-200 h-full flex flex-col justify-between">
+      <div className="bg-base-100/30 hover:bg-base-100/90 duration-200 h-full flex flex-col justify-between">
         <div id="project-text" className="p-4">
           <div
             id="project-header"
@@ -41,30 +41,16 @@ export default function Project({
           </div>
           <div
             id="project-description"
-            className="text-md opacity-0 hidden mt-4 flex"
+            className="text-md opacity-0 hidden mt-4 hover:flex"
           >
             {description}
           </div>
         </div>
         <span>
-          <span className="flex justify-between px-4 pb-4 items-center">
-            <a
-              className="btn btn-sm btn-primary mt-4 w-max flex gap-2 text-white"
-              href="#"
-            >
-              <ExternalLink size={16} /> visit
-            </a>
-            <a
-              className="btn btn-sm border-white text-white btn-outline bg-black/50 mt-4 w-max flex gap-2"
-              href="#"
-            >
-              <Code size={16} />
-              code
-            </a>
-          </span>
+          <div>
           <div
             id="project-tags"
-            className="flex p-4 h-16 gap-4 flex-wrap w-full justify-center items-center bg-base-100 duration-400"
+            className="flex relative h-10 w-full justify-center items-center bg-base-100/50 overflow-x-auto overflow-y-hidden duration-400"
           >
             {tags.map((tag, index) => {
               if (tag === selectedSkill) {
@@ -72,7 +58,7 @@ export default function Project({
                   <span
                     key={index}
                     style={{ boxShadow: "0px 2px 5px 0px #00000050" }}
-                    className="badge bg-base-content border-none text-base-100 tracking-wide font-bold"
+                    className="badge px-2 bg-base-content border-none text-base-100 tracking-wide font-bold"
                   >
                     {tag}
                   </span>
@@ -81,7 +67,7 @@ export default function Project({
                 return (
                   <span
                     key={index}
-                    className="badge badge-outline bg-base-100 text-base-content tracking-wide opacity-90"
+                    className="badge mx-2 badge-outline text-base-content tracking-wide opacity-90"
                   >
                     {tag}
                   </span>
@@ -89,8 +75,28 @@ export default function Project({
               }
             })}
           </div>
+          <span className="shadow z-10 relative flex justify-between px-4 pb-4 items-center bg-base-100">
+            <a
+            aria-label={`View ${title}`}	
+              className="btn btn-sm btn-primary mt-4 w-max flex gap-2 text-white"
+              href="#"
+            >
+              <ExternalLink size={16} /> visit
+            </a>
+            <a
+            aria-
+            aria-label={`View the source-code of ${title} on GitHub`}	
+              className="btn btn-sm border-white text-white btn-outline bg-black/50 mt-4 w-max flex gap-2"
+              href="#"
+            >
+              <Code size={16} />
+              code
+            </a>
+          </span>
+         </div>
         </span>
+        
       </div>
-    </div>
-  );
+    </main>
+    );
 }
