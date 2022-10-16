@@ -96,8 +96,8 @@ export default function ProjectsPage({}: Props) {
 
   return (
     <main id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
-      <div id="projects-section" className="w-2/3 slide-left">
-        <div className="flex flex-col lg:flex-row md:justify-between items-end">
+      <div id="projects-section" className="w-full md:w-2/3 mt-8 md:mt-0 slide-left">
+        <div className="flex md:justify-between items-end">
           <div className="text-4xl font-bold">My projects</div>
         </div>
         <div id="projects-container" className="pt-8">
@@ -134,7 +134,7 @@ export default function ProjectsPage({}: Props) {
           </div>
           <div
             id="projects-scroller"
-            className="overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 px-4"
+            className="md:overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 px-4 justify-items-center max-h-[60vh] overflow-scroll "
           >
             {filteredProjectsList.map((project: any, index: number) => {
               if (project.id === 1) {
@@ -179,7 +179,7 @@ export default function ProjectsPage({}: Props) {
           <Timeline />
         </div>
       </div>
-      <div id="projects-contact" className="w-1/4 flex flex-col slide-up justify-between">
+      <div id="projects-contact" className="hidden w-full md:w-1/4 md:flex flex-col slide-up justify-between ">
         <div className="text-2xl font-bold">Let's talk!</div>
         <div className="text-xl opacity-80 my-4">
           I am always open to new opportunities and challenges. If you have any

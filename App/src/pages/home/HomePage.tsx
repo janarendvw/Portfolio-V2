@@ -10,7 +10,7 @@ export default function HomePage({}: Props) {
     rotation.setRotation(1)
     
   }, [bgContext])
-  const audio = new Audio("/audio/home_chord.flac");
+  const audio = new Audio("/audio/contact_chord.flac");
   useEffect(() => {
     audio.play();
   }, []);
