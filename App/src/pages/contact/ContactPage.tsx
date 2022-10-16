@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import ReactAudioPlayer from 'react-audio-player'
+import { useContext, useEffect } from 'react'
 import { bgContext } from '../../App'
 import ContactForm from './ContactForm'
 
@@ -21,10 +20,6 @@ export default function ContactPage({}: Props) {
           <div id="contact-hero-right" className="w-96 slide-up">
             <ContactForm/>
             </div>
-            <ReactAudioPlayer
-     src="/audio/contact_chord.flac"
-     autoPlay
-     />
     </main>
   )
 }

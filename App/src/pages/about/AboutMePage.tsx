@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import ReactAudioPlayer from "react-audio-player";
+import { useContext, useEffect } from "react";
 import { Clipboard, FileText } from "react-feather";
 import { Link } from "react-router-dom";
 import { bgContext } from "../../App";
@@ -41,10 +40,6 @@ export default function AboutMePage({}: Props) {
       <div id="about-me-image" className="lg:pt-0 pt-24 w-1/2 lg:w-1/4 flex h-full slide-right">
         <img src="/images/about-me.svg" alt="about me" />
       </div>
-      <ReactAudioPlayer
-     src="/audio/about_chord.flac"
-     autoPlay
-     />
     </main>
   );
 }

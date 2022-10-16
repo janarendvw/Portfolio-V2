@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { User } from "react-feather";
 import { Link } from "react-router-dom";
 import { bgContext } from "../../App";
-import ReactAudioPlayer from "react-audio-player";
 type Props = {};
 
 export default function HomePage({}: Props) {
@@ -28,10 +27,6 @@ export default function HomePage({}: Props) {
         </div>
         <Link to={"/about-me"} className="btn btn-primary mt-8 gap-4 text-white"><User/>About me</Link>
       </div>
-     <ReactAudioPlayer
-     src="/audio/home_chord.flac"
-     autoPlay
-     />
     </main>
   );
 }

@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import ReactAudioPlayer from "react-audio-player";
-import { ChevronDown, Code, ExternalLink } from "react-feather";
 import { bgContext } from "../../App";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
@@ -184,10 +182,6 @@ export default function ProjectsPage({}: Props) {
         </div>
         <ContactForm />
       </div>
-      <ReactAudioPlayer
-     src="/audio/projects_chord.flac"
-     autoPlay
-     />
     </main>
   );
 }
