@@ -16,7 +16,7 @@ function App() {
   return (
     <>
 <bgContext.Provider value={{ rotation, setRotation }}>
-      <div className="grid grid-cols-12 gap-4 w-full h-screen auto-rows-min content-between">
+      <div className="grid grid-cols-12 gap-4 w-full min-h-screen auto-rows-min content-between">
         <div className="sr-only" id="skip-navbar">
           <a href="#main-content">Skip navigation and go to main content</a>
         </div>

@@ -24,7 +24,7 @@ export default function Navbar({}: Props) {
       <span className="flex md:flex-col md:w-auto w-full">
         <nav
           id="nav-links"
-          className="flex gap-10 items-center w-full justify-evenly"
+          className="flex gap-10 items-center w-full justify-between"
         >
           <Link
             className={
