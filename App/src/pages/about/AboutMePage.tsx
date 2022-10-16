@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import ReactAudioPlayer from "react-audio-player";
+import { useContext, useEffect } from "react";
 import { Clipboard, FileText } from "react-feather";
 import { Link } from "react-router-dom";
 import { bgContext } from "../../App";
@@ -13,6 +12,11 @@ export default function AboutMePage({}: Props) {
       rotation?.setRotation(-1);
     }
   }, [bgContext]);
+
+  const audio = new Audio("/audio/about_chord.flac");
+  useEffect(() => {
+    audio.play();
+  }, []);
   return (
     <main id="main-content" className="flex flex-col-reverse gap-32 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
       <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-up">
@@ -41,10 +45,6 @@ export default function AboutMePage({}: Props) {
       <div id="about-me-image" className="lg:pt-0 pt-24 w-1/2 lg:w-1/4 flex h-full slide-right">
         <img src="/images/about-me.svg" alt="about me" />
       </div>
-      <ReactAudioPlayer
-     src="/audio/about_chord.flac"
-     autoPlay
-     />
     </main>
   );
 }
