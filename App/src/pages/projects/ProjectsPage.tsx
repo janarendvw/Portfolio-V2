@@ -1,6 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import ReactAudioPlayer from "react-audio-player";
-import { ChevronDown, Code, ExternalLink } from "react-feather";
 import { bgContext } from "../../App";
 import Project from "../../layout/Project";
 import Timeline from "../../layout/Timeline";
@@ -90,6 +88,11 @@ export default function ProjectsPage({}: Props) {
     setFilteredProjectsList(filteredProjects);
     setNumberOfProjectsShown(filteredProjects.length);
   }, [selectedSkill]);
+
+  const audio = new Audio("/audio/projects_chord.flac");
+  useEffect(() => {
+    audio.play();
+  }, []);
 
   return (
     <main id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
@@ -184,10 +187,6 @@ export default function ProjectsPage({}: Props) {
         </div>
         <ContactForm />
       </div>
-      <ReactAudioPlayer
-     src="/audio/projects_chord.flac"
-     autoPlay
-     />
     </main>
   );
 }

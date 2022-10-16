@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from 'react'
-import ReactAudioPlayer from 'react-audio-player'
+import { useContext, useEffect } from 'react'
 import { bgContext } from '../../App'
 import ContactForm from './ContactForm'
 
@@ -10,6 +9,10 @@ export default function ContactPage({}: Props) {
   useEffect(() => {
     rotation.setRotation(-3)
   }, [])
+  const audio = new Audio("/audio/contact_chord.flac");
+  useEffect(() => {
+    audio.play();
+  }, []);
   return (
     <main id="main-content" className='flex justify-between col-start-2 col-span-10 row-start-2'>
       <div id="contact-hero-left" className="w-1/3 slide-left">
@@ -21,10 +24,6 @@ export default function ContactPage({}: Props) {
           <div id="contact-hero-right" className="w-96 slide-up">
             <ContactForm/>
             </div>
-            <ReactAudioPlayer
-     src="/audio/contact_chord.flac"
-     autoPlay
-     />
     </main>
   )
 }
