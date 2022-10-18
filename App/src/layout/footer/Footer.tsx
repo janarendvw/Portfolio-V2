@@ -13,11 +13,12 @@ export default function Footer({}: Props) {
   }, []);
 
   useEffect(() => {
+    return () => {
     let footer = document.getElementById('footer');
     footer?.classList.add('moveDownUp');
     setTimeout(() => {
     footer?.classList.remove('moveDownUp');
-    }, 3700);
+    }, 3700);}
   }, [location]);
   return (
     <footer id={'footer'} className="col-start-0 col-span-12 row-start-3 self-end p-4 flex justify-between">
