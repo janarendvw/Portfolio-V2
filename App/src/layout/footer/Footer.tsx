@@ -21,14 +21,8 @@ export default function Footer({}: Props) {
     }, 3700);}
   }, [location]);
   return (
-    <footer id={'footer'} className="col-start-0 col-span-12 row-start-3 self-end p-4 flex justify-between">
+    <footer id={'footer'} className="col-start-0 col-span-12 row-start-3 self-end flex justify-start">
       <Socials />
-      <span className="flex gap-4 items-center"> Theme: 
-      <select aria-label="theme select" data-choose-theme className="bg-base-100 cursor-pointer focus-visible:outline rounded-box">
-  <option value="myDark">Dark</option>
-  <option value="myLight">Light</option>
-</select>
-</span>
     </footer>
   );
 }
