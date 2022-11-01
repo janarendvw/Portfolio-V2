@@ -9,17 +9,6 @@ export default function Navbar({}: Props) {
   const [currentPath, setCurrentPath] = useState("");
   let activeClass = 'before:content-[\'\'] before:absolute before:rounded-box before:-top-1/2 before:left-0 before:w-full before:h-1 before:bg-secondary';
 
-  useEffect(() => {
-    setCurrentPath(location.pathname);
-   return () => {
-    let navBar = document.getElementById('navbar');
-    navBar?.classList.add('moveUpDown');
-    setTimeout(() => {
-    navBar?.classList.remove('moveUpDown');
-    }, 3700);
-    }
-  }, [location]);
-
   return (
     <div
       id="navbar"

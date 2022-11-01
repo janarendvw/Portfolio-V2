@@ -1,6 +1,7 @@
 import { createContext, Suspense, lazy, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import AudioPopUp from "./layout/AudioPopUp";
 import Footer from "./layout/footer/Footer";
 import Navbar from "./layout/Navbar";
 
@@ -16,6 +17,7 @@ function App() {
   
   return (
     <>
+    <AudioPopUp/>
 <bgContext.Provider value={{ rotation, setRotation }}>
       <div className="grid grid-cols-12 gap-4 w-full min-h-screen auto-rows-min content-between">
         <div className="sr-only" id="skip-navbar">
