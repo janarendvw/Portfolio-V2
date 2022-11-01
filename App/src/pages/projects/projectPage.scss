@@ -1,13 +1,4 @@
-#project {
-}
 
-#project-tooltip {
-  animation: fadeIn 500ms ease-out forwards;
-  animation-delay: calc(2000ms + var(--animation-order) * 100ms);
-  opacity: 1;
-  display: block!important;
-  visibility: visible!important;
-}
 #project:hover #project-description {
   opacity: 80%;
   display: block;
@@ -33,19 +24,18 @@
 
 @keyframes slideInFromBottom {
   0% {
-    transform: translateY(100%);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes expand {
-    0%{
-        padding-block: 0rem;
-    }
-    100%{
-        padding-bottom: 2rem;
-        padding-top: 10px;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
