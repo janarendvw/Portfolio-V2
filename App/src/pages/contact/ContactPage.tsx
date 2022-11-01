@@ -9,10 +9,6 @@ export default function ContactPage({}: Props) {
   useEffect(() => {
     rotation.setRotation(-3)
   }, [])
-  const audio = new Audio("/audio/projects_chord.flac");
-  useEffect(() => {
-    audio.play();
-  }, []);
   return (
     <main id="main-content" className='flex flex-col gap-8 md:flex-row justify-between col-start-2 col-span-10 row-start-2'>
       <div id="contact-hero-left" className="w-full md:w-1/3 slide-left">

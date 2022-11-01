@@ -12,11 +12,6 @@ export default function AboutMePage({}: Props) {
       rotation?.setRotation(-1);
     }
   }, [bgContext]);
-
-  const audio = new Audio("/audio/home_chord.flac");
-  useEffect(() => {
-    audio.play();
-  }, []);
   return (
     <main id="main-content" className="flex flex-col-reverse gap-8 lg:flex-row justify-between items-center lg:items-between col-start-2 col-span-10 row-start-2">
       <div id="about-me-text" className="w-full lg:w-1/3 flex flex-col slide-left">

@@ -7,13 +7,9 @@ type Props = {};
 export default function HomePage({}: Props) {
   const rotation = useContext(bgContext)
   useEffect(() => {
-    rotation.setRotation(1)
-    
+    rotation.setRotation(1)  
   }, [bgContext])
-  const audio = new Audio("/audio/contact_chord.flac");
-  useEffect(() => {
-    audio.play();
-  }, []);
+  
   return (
     <main id="main-content" className="flex flex-col md:flex-row justify-between col-start-2 col-span-10 row-start-2">
       <div id="home-hero-left" className="w-full md:w-1/3 fade-in">

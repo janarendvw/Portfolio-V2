@@ -89,11 +89,6 @@ export default function ProjectsPage({}: Props) {
     setNumberOfProjectsShown(filteredProjects.length);
   }, [selectedSkill]);
 
-  const audio = new Audio("/audio/about_chord.flac");
-  useEffect(() => {
-    audio.play();
-  }, []);
-
   return (
     <main id="main-content" className="flex justify-between col-start-2 row-start-2 row-end-2 col-end-12">
       <div id="projects-section" className="w-full md:w-2/3 mt-8 md:mt-0 slide-left">
