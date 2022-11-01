@@ -12,7 +12,7 @@ export default function Footer({}: Props) {
   }, []);
 
   return (
-    <footer id={'footer'} className="col-start-0 col-span-12 row-start-3 self-end flex justify-between items-center px-4">
+    <footer id={'footer'} className="col-start-0 col-span-12 row-start-3 self-end flex justify-between items-bottom px-4">
       <Socials />
       <AudioSwitch/>
     </footer>

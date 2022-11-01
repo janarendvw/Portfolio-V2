@@ -6,7 +6,7 @@ type Props = {};
 
 export default function Socials({}: Props) {
   return (
-    <div className="flex gap-4 border-b-2 border-dashed p-2">
+    <div className="flex gap-4 border-b-2 p-2">
       <a aria-label="github" className="opacity-70 hover:opacity-100 focus-visible:outline rounded-box" href={"https://github.com"} target={'_blank'}>
         <GitHub size={20} />
       </a>

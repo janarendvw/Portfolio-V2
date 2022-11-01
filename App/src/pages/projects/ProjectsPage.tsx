@@ -129,7 +129,7 @@ export default function ProjectsPage({}: Props) {
           </div>
           <div
             id="projects-scroller"
-            className="md:overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 px-4 justify-items-center max-h-[60vh] overflow-scroll "
+            className="md:overflow-auto grid grid-flow-row md:grid-flow-col cursor-grab gap-10 p-4 justify-items-center max-h-[60vh] overflow-scroll "
           >
             {filteredProjectsList.map((project: any, index: number) => {
               if (project.id === 1) {

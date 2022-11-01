@@ -10,7 +10,7 @@ export default function AudioSwitch({}: Props) {
         
     }, [audio.mute])
   return (
-<><button onClick={() => {
+<><button className='border-b-2 p-2' onClick={() => {
     audio.setMute(!audio.mute)
 }}>{audio.mute ? <span className='opacity-60'><VolumeX/></span> : <Volume2/>}</button>
 </>

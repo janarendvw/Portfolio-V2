@@ -11,7 +11,7 @@ export default function AudioPopUp({}: Props) {
     <div
       className={`w-full h-full bg-black/70 z-10 fixed ${popup} justify-center items-center`}
     >
-      <div className="w-1/2 max-w-lg rounded-box p-4 bg-base-100 flex items-center justify-evenly gap-2 flex-col">
+      <div className="md:w-1/2 w-96 max-w-lg rounded-box p-4 bg-base-100 flex items-center justify-evenly gap-2 flex-col">
         <p className="text-xl">
           Hi there! This site uses audio to enhance the experience. Would you
           like to have this enabled by default?
@@ -31,7 +31,7 @@ export default function AudioPopUp({}: Props) {
             <VolumeX /> Disable sound
           </button>
           <button
-            className="btn btn-primary w-1/2 flex gap-2"
+            className="btn btn-primary flex gap-2 w-1/2"
             onClick={() => {
               setPopup("hidden");
               audio.setMute(false);
